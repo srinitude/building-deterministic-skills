@@ -1,6 +1,6 @@
 # Productized deterministic agent-skill release pattern
 
-Use this reference when the user asks for a deterministic agentskills.io-compliant skill as a standalone package/repository, not just a local `~/.hermes/skills/<name>` entry.
+Use this reference when the user asks for a deterministic agentskills.io-compliant skill as a standalone package/repository, not just a local skill-library entry.
 
 ## TDD chronology that satisfies strict reviews
 
@@ -18,7 +18,7 @@ Add package scripts and tests for these gates early so failures are actionable:
 - `check:loc`: max lines per file and max lines per construct.
 - `check:nesting`: AST-based nesting depth; for tests, measure nesting relative to the test declaration.
 - `check:portable`: no hardcoded user paths or machine-specific source paths in committed source.
-- `check:agentskills`: frontmatter, required directories, one-level references, and package layout. Enforce agentskills.io `name`, `description`, `license`, `compatibility`, and flat string-valued `metadata` fields.
+- `check:agentskills`: frontmatter, required directories, one-level references, and package layout. Enforce the agentskills.io closed top-level field set (`name`, `description`, `license`, `allowed-tools`, `metadata`, `compatibility`) and nest everything else under `metadata`.
 - `check:skills-ref`: run the official `skills-ref validate .` reference validator from a pinned devDependency so CI catches upstream-format drift.
 - `check:no-deprecated`: compare used primitives against a generated/source-grounded deprecation inventory.
 - `check:words`: scan source and tests for development residue. If a requirement names a legacy script such as `check:placeholders`, keep the package script name for compatibility while the implementation can emit a neutral gate name.

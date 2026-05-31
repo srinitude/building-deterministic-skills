@@ -1,20 +1,18 @@
 ---
 name: building-deterministic-skills
 description: >
-  Build deterministic Agent Skills that weak models can execute without guessing. Use when the user says "build a deterministic skill", "make an agentskills.io-compliant skill", "validate a skill against hermes-agent", "make the skill easy for dumb models", "write a skill generator", "add skill evals", or "ensure skills_guard passes", even if they do not say "Agent Skills" explicitly. Do NOT use for ordinary editing, pure trigger tuning, non-Hermes prompt engineering, hermes-agent-skill-authoring, or skill-description-optimizer tasks.
+  Build deterministic Agent Skills that weak models can execute without guessing. Use when the user says "build a deterministic skill", "make an agentskills.io-compliant skill", "validate a skill with skills-ref", "make the skill easy for dumb models", "write a skill generator", "add skill evals", or "make a skill the dumbest model can follow", even if they do not say "Agent Skills" explicitly. Do NOT use for ordinary prose editing, pure trigger-phrase tuning, non-skill prompt engineering, or generic documentation tasks.
 license: Apache-2.0
 metadata:
-  version: 0.1.0
-  hermes:
-    tags: [skills, authoring, deterministic, agentskills, validation, weak-models]
-    related_skills: [hermes-agent-skill-authoring, skill-description-optimizer]
+  version: 0.2.0
+  tags: [skills, authoring, deterministic, agentskills, validation, weak-models]
 ---
 
 # Building deterministic, dumb-model-friendly Agent Skills
 
 ## CRITICAL RULES (read first)
 
-1. Preserve both targets: the skill you write must pass Hermes validators and the skill it generates must be easy for weak models to follow.
+1. Preserve both targets: the skill you write must pass the agentskills.io validator (`skills-ref`) and the skill it generates must be easy for weak models to follow.
 2. Front-load and book-end every generated skill's critical rules. Put the rules near the top, then repeat the final self-check at the bottom.
 3. Use defaults-not-menus. Choose one default path for the workflow; put exceptions in Gotchas.
 4. Use procedures-over-declarations. Write numbered steps and exact commands, not broad advice.
@@ -30,14 +28,14 @@ metadata:
 - Ambiguous terms drift. Use one-term-per-concept and repeat that term exactly.
 - Free-form output varies. Provide output templates for fixed formats.
 - Long skills rot context. Move details to `references/dumb-model-authoring.md` with explicit load triggers.
-- The Hermes scanner may warn on research artifacts; `tools.skills_guard.scan_skill(source='agent-created')` may still be allowed.
+- A security/lint scanner may warn on documented commands or research artifacts. Keep documented shell snippets minimal and store raw research under `reports/` so the shipped skill body stays clean.
 
 ## When to use
 
 Use this skill when the user wants a deterministic Agent Skill package that is:
 
-1. agentskills.io compliant;
-2. validated against the live hermes-agent codebase;
+1. agentskills.io compliant (passes the canonical `skills-ref` validator);
+2. portable across any agent runtime that loads Agent Skills (no dependency on one host);
 3. structured so small, quantized, distilled, low-reasoning, sycophantic, hallucination-prone, context-rot-prone models can still execute it;
 4. packaged with `references/`, `scripts/`, `assets/`, and `evals/` when those resources are required.
 
@@ -56,15 +54,15 @@ skill-name/
 
 Any file referenced from `SKILL.md` must live in one of those four directories. Keep file references one level deep when possible.
 
-## Frontmatter rules (Hermes + agentskills.io)
+## Frontmatter rules (agentskills.io specification)
 
 1. File starts at byte 0 with `---` and closes frontmatter with `\n---\n`.
 2. `name` is 1-64 characters, lowercase letters/digits/hyphens only, must not start or end with a hyphen, must not contain consecutive hyphens (`--`), and equals the parent directory name (compared after NFKC normalization).
 3. `description` is 1-1024 characters, imperative, and includes what the skill does plus when to use it.
-4. `description` includes at least six quoted trigger phrases and one explicit `Do NOT use for` clause naming at least two neighboring skills.
+4. `description` includes at least six quoted trigger phrases and one explicit `Do NOT use for` clause naming at least two neighboring task types or skills.
 5. `license` is present.
 6. `compatibility` appears only when environment requirements exist and stays under 500 characters.
-7. Only these top-level frontmatter fields are allowed by the agentskills.io spec: `name`, `description`, `license`, `allowed-tools`, `metadata`, `compatibility`. Put EVERYTHING else (`version`, `author`, `tags`, `related_skills`, `dependencies`, `platforms`, etc.) inside `metadata:`. A top-level `version:` or `author:` fails the canonical `skills-ref` validator. Local Hermes skills keep their extras under `metadata.hermes`.
+7. Only these top-level frontmatter fields are allowed by the agentskills.io spec: `name`, `description`, `license`, `allowed-tools`, `metadata`, `compatibility`. Put EVERYTHING else (`version`, `author`, `tags`, `related_skills`, `dependencies`, `platforms`, etc.) inside `metadata:`. A top-level `version:` or `author:` fails the canonical `skills-ref` validator.
 8. Total `SKILL.md` length stays at or below 100000 characters; body stays at or below 500 lines.
 
 ## Dumb-model output contract for generated skills
@@ -88,32 +86,29 @@ Read `references/dumb-model-authoring.md` before changing this output contract. 
 
 ## Ordered workflow
 
-1. Run source validation command:
-   `cd /Users/kiren/.hermes/hermes-agent && ./venv/bin/python -m pytest tests/tools/test_skill_manager_tool.py tests/tools/test_skill_size_limits.py tests/agent/test_skill_utils.py tests/tools/test_skills_guard.py -q`
-2. Read the user's artifact and identify the one skill root to create. If no artifact, skill name, or task is supplied, output `INSUFFICIENT CONTEXT: <missing field>` and stop instead of inventing a skill.
-3. Create `SKILL.md`, `references/`, `scripts/`, `assets/`, and `evals/` in that skill root.
-4. Write the description first, then verify it has six quoted trigger phrases and a `Do NOT use for` clause.
-5. Write `## CRITICAL RULES`, `## Gotchas`, and the numbered workflow before adding long references.
-6. Add conditional reference pointers only after the referenced file exists.
-7. Put mechanical checks into scripts and make every script support `--self-test`.
-8. Add `evals/evals.json` with trigger, anti-trigger, and functional cases.
-9. Run every validation command in the Validation pipeline section.
-10. Fix each failing command, then rerun the same command.
-11. Return only after all checks pass and the final report includes command evidence.
+1. Read the user's artifact and identify the one skill root to create. If no artifact, skill name, or task is supplied, output `INSUFFICIENT CONTEXT: <missing field>` and stop instead of inventing a skill.
+2. Create `SKILL.md`, `references/`, `scripts/`, `assets/`, and `evals/` in that skill root.
+3. Write the description first, then verify it has six quoted trigger phrases and a `Do NOT use for` clause.
+4. Write `## CRITICAL RULES`, `## Gotchas`, and the numbered workflow before adding long references.
+5. Add conditional reference pointers only after the referenced file exists.
+6. Put mechanical checks into scripts and make every script support `--self-test`.
+7. Add `evals/evals.json` with trigger, anti-trigger, and functional cases.
+8. Run every validation command in the Validation pipeline section.
+9. Fix each failing command, then rerun the same command.
+10. Return only after all checks pass and the final report includes command evidence.
 
 ## Validation pipeline
 
-1. **Hermes frontmatter:** run `scripts/check-skill-frontmatter.py` for this skill, and for generated skills import `tools.skill_manager_tool._validate_frontmatter` plus `tools.skill_manager_tool._validate_content_size`.
-2. **Hermes discovery:** import `agent.skill_utils.get_all_skills_dirs` and `agent.skill_utils.iter_skill_index_files`, then confirm the skill path is found.
-3. **Hermes security scan:** import `tools.skills_guard.scan_skill` and `tools.skills_guard.should_allow_install`; scan with `source='agent-created'` and require `allowed is True`.
-4. **Description quality:** require `Use when`, at least six quoted trigger phrases, one `Do NOT use for` clause, and length at or below 1024 characters.
-5. **Dumb-model coverage:** run `scripts/check-dumb-model-coverage.py` (it reads the research bundled in `references/llm-smart-vs-dumb-factors.md` and `references/writing-agent-skills-for-dumb-models.md` by default — no external paths required).
-6. **Self-application readability:** run `scripts/check-dumb-model-readability.py SKILL.md`.
-7. **agentskills.io compliance:** validate against the canonical reference validator (`skills-ref validate ./<skill>` from `github.com/agentskills/agentskills`); only the allowed top-level frontmatter fields may appear (`name`, `description`, `license`, `allowed-tools`, `metadata`, `compatibility`).
-8. **Source grounding:** run `scripts/check-source-grounding.py` after Firecrawl map and scrape artifacts exist.
-9. **Determinism:** run `scripts/check-determinism.py` and require byte-identical `--self-test` output for every script.
-10. **No dead links:** run `scripts/check-no-dead-links.py`.
-11. **Hermes pytest:** run `cd /Users/kiren/.hermes/hermes-agent && ./venv/bin/python -m pytest tests/tools/test_skill_manager_tool.py tests/tools/test_skill_size_limits.py tests/agent/test_skill_utils.py tests/tools/test_skills_guard.py -q`.
+1. **agentskills.io compliance:** run the canonical reference validator — `skills-ref validate ./<skill>` (from `github.com/agentskills/agentskills`). Only the allowed top-level frontmatter fields may appear (`name`, `description`, `license`, `allowed-tools`, `metadata`, `compatibility`); fix every reported error.
+2. **Frontmatter (offline):** run `scripts/check-skill-frontmatter.py` — it mirrors the canonical rules (byte-0 frontmatter, name matches parent directory, name format, description ≤ 1024, closed field set, content ≤ 100000) with no external dependency.
+3. **Description quality:** require `Use when`, at least six quoted trigger phrases, one `Do NOT use for` clause, and length at or below 1024 characters.
+4. **Dumb-model coverage:** run `scripts/check-dumb-model-coverage.py` (it reads the research bundled in `references/llm-smart-vs-dumb-factors.md` and `references/writing-agent-skills-for-dumb-models.md` by default — no external paths required).
+5. **Self-application readability:** run `scripts/check-dumb-model-readability.py SKILL.md`.
+6. **Preserved invariants:** run `scripts/check-preserved-invariants.py` (confirms the dumb-model contract terms and at least eight numbered pitfalls survive any edit).
+7. **Source grounding:** run `scripts/check-source-grounding.py` after the Firecrawl map and scrape artifacts exist.
+8. **Determinism:** run `scripts/check-determinism.py` and require byte-identical `--self-test` output for every script.
+9. **No dead links:** run `scripts/check-no-dead-links.py`.
+10. **Report grounding:** run `scripts/check-report-grounding.py` after the change report exists.
 
 ## Output template
 
@@ -123,12 +118,12 @@ When you finish, return the result in exactly this shape (fill every line; do no
 Skill: <skill-name> at <absolute skill dir>
 Shape: CRITICAL RULES + Gotchas + numbered workflow + Output template + book-end checklist present
 Validation pipeline (each PASS/FAIL with evidence):
+- skills-ref validate: <PASS/FAIL>
 - check-skill-frontmatter: <PASS/FAIL>
 - check-dumb-model-coverage: <PASS/FAIL>
 - check-dumb-model-readability: <PASS/FAIL>
-- skills_guard scan_skill(source='agent-created'): <verdict> allowed=<True/False>
-- check-source-grounding / check-determinism / check-no-dead-links: <PASS/FAIL>
-- hermes pytest gate: <PASS/FAIL>
+- check-preserved-invariants: <PASS/FAIL>
+- check-source-grounding / check-determinism / check-no-dead-links / check-report-grounding: <PASS/FAIL>
 Files created/changed: <comma-separated absolute paths>
 Assumptions: <INSUFFICIENT CONTEXT items, or "none">
 ```
@@ -139,7 +134,7 @@ The description is the activation surface. It must contain:
 
 1. Imperative `Use when` wording.
 2. At least six quoted trigger phrases users actually say.
-3. One explicit `Do NOT use for` clause naming at least two related skills.
+3. One explicit `Do NOT use for` clause naming at least two related task types or skills.
 4. A hedge such as `even if they do not say "Agent Skills" explicitly`.
 5. What the skill produces and when to activate it.
 6. No XML angle brackets in field values.
@@ -148,7 +143,7 @@ The description is the activation surface. It must contain:
 
 ## Community skill adoption
 
-When adopting a third-party skill repository into the local skill library, follow `references/third-party-skill-adoption.md` only after the official installer has been tried and scan findings have been classified.
+When adopting a third-party skill repository into a local skill library, follow `references/third-party-skill-adoption.md` only after the official installer has been tried and scan findings have been classified.
 
 ## Standalone productized skill repositories
 
@@ -163,9 +158,9 @@ When the user wants a deterministic agentskills.io skill built, tested, pushed, 
 5. **Using inconsistent names for the same concept.** Pick one term and reuse it everywhere.
 6. **Writing a description with too few trigger phrases.** Six realistic phrases is the minimum.
 7. **Writing a long SKILL.md without conditional progressive disclosure.** Move details to a reference and say when to read it.
-8. **Removing `_validate_frontmatter`, `_validate_content_size`, `iter_skill_index_files`, `skills_guard`, `scan_skill`, or the pytest gate while simplifying.** That lowers coverage.
+8. **Putting disallowed fields at the top level of frontmatter.** Keep only `name`, `description`, `license`, `allowed-tools`, `metadata`, `compatibility` at the top; nest everything else under `metadata`.
 9. **Deleting `references/third-party-skill-adoption.md` or `references/productized-agent-skill-release.md`.** These are still wired to important workflows.
-10. **Treating a caution verdict from `tools.skills_guard.scan_skill(source='agent-created')` as failure.** Require `should_allow_install` to return `True`.
+10. **Treating a caution verdict from a security scanner as automatic failure.** Classify findings; documented commands and research artifacts are usually safe — neutralize or relocate noisy raw artifacts rather than deleting capability.
 11. **Using broad advice without examples.** Replace it with a numbered procedure and an output template.
 12. **Forgetting to book-end critical rules.** Repeat the final self-check in the verification checklist.
 
@@ -179,18 +174,17 @@ When the user wants a deterministic agentskills.io skill built, tested, pushed, 
 
 ## Verification checklist
 
+- [ ] `skills-ref validate ./<skill>` reports no errors (agentskills.io compliant).
 - [ ] `scripts/check-skill-frontmatter.py` passes for `SKILL.md`.
-- [ ] `scripts/check-preserved-invariants.py` confirms preserved Hermes validation coverage and at least eight numbered pitfalls.
+- [ ] `scripts/check-preserved-invariants.py` confirms the preserved dumb-model contract and at least eight numbered pitfalls.
 - [ ] `references/dumb-model-authoring.md` exists and is linked from `SKILL.md`.
 - [ ] The generated-skill output contract requires front-loaded-AND-book-ended critical rules, Gotchas section, defaults-not-menus, INSUFFICIENT CONTEXT, output templates, offloading math/counting to scripts, and conditional progressive disclosure.
 - [ ] `scripts/check-dumb-model-coverage.py` passes against the bundled `references/llm-smart-vs-dumb-factors.md` and `references/writing-agent-skills-for-dumb-models.md`.
 - [ ] `scripts/check-dumb-model-readability.py SKILL.md` passes.
 - [ ] Only allowed top-level frontmatter fields are present (`name`, `description`, `license`, `allowed-tools`, `metadata`, `compatibility`); everything else is nested under `metadata`.
-- [ ] `scripts/check-source-grounding.py` passes for `reports/source-grounding/firecrawl/agentskills-io/map.json` and the scrape ledger.
+- [ ] `scripts/check-source-grounding.py` passes for the Firecrawl map and scrape ledger.
 - [ ] `scripts/check-determinism.py` passes.
 - [ ] `scripts/check-no-dead-links.py` passes.
 - [ ] `scripts/check-report-grounding.py` passes after the change report exists.
-- [ ] The Hermes pytest gate passes: `pytest tests/tools/test_skill_manager_tool.py tests/tools/test_skill_size_limits.py tests/agent/test_skill_utils.py tests/tools/test_skills_guard.py`.
-- [ ] `tools.skills_guard.scan_skill(source='agent-created')` returns `allowed=True` through `should_allow_install`.
 - [ ] Final report records before and after sha256 values and rejected tradeoffs.
 - [ ] Critical rules stayed front-loaded and book-ended in the generated skill contract.

@@ -20,6 +20,6 @@ body:
     id: source
     attributes:
       label: Source grounding
-      description: Cite the agentskills.io or Hermes source that supports the change, if applicable.
+      description: Cite the agentskills.io source that supports the change, if applicable.
     validations:
       required: false

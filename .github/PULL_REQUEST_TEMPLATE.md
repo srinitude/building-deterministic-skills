@@ -6,7 +6,7 @@
 
 ## Source grounding
 
-<!-- If you changed claims about agentskills.io or Hermes, cite the source. -->
+<!-- If you changed claims about agentskills.io, cite the source. -->
 
 ## Checklist
 

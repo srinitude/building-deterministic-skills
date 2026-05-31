@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Check preserved coverage and dumb-model output contract strings."""
+"""Check preserved coverage and the dumb-model output contract strings.
+
+Platform-agnostic: depends only on the Python standard library and the skill's
+own files. It guards against edits that silently weaken the skill by asserting
+the dumb-model contract terms, the agentskills.io validation anchors, the wired
+reference files, and a minimum number of numbered pitfalls all survive.
+"""
 from __future__ import annotations
 
 import argparse
@@ -17,9 +23,9 @@ def section(text: str, heading: str) -> str:
     match = pattern.search(text)
     if not match:
         return ""
-    next_match = re.search(r"^## ", text[match.end() :], re.M)
+    next_match = re.search(r"^## ", text[match.end():], re.M)
     end = match.end() + next_match.start() if next_match else len(text)
-    return text[match.end() : end]
+    return text[match.end():end]
 
 
 def pitfall_count(text: str) -> int:
@@ -39,16 +45,21 @@ def main() -> int:
     backup = root.parent / (root.name + ".bak") / "SKILL.md"
     original = backup.read_text() if backup.exists() else ""
 
-    required_primitives = [
-        "_validate_frontmatter",
-        "_validate_content_size",
-        "skills_guard",
-        "scan_skill",
-        "iter_skill_index_files",
-        "pytest tests/tools/test_skill_manager_tool.py tests/tools/test_skill_size_limits.py tests/agent/test_skill_utils.py tests/tools/test_skills_guard.py",
+    # agentskills.io validation anchors that must stay wired into the methodology.
+    required_anchors = [
+        "skills-ref",
+        "agentskills.io",
+        "check-skill-frontmatter.py",
+        "check-dumb-model-readability.py",
+        "check-dumb-model-coverage.py",
+        "check-determinism.py",
+        "check-no-dead-links.py",
+        "check-source-grounding.py",
+        "check-report-grounding.py",
+        "check-preserved-invariants.py",
     ]
-    missing = [item for item in required_primitives if item not in text]
-    assert not missing, "missing preserved primitives: " + ", ".join(missing)
+    missing = [item for item in required_anchors if item not in text]
+    assert not missing, "missing validation anchors: " + ", ".join(missing)
 
     original_pitfalls = pitfall_count(original) if original else 8
     current_pitfalls = pitfall_count(text)

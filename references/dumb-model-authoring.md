@@ -4,10 +4,11 @@ Use this reference when a generated skill must remain understandable to small, q
 
 ## Source grounding
 
-Local validation sources:
+Bundled research sources (in this skill, no external paths required):
 
-1. `/Users/kiren/Downloads/llm-smart-vs-dumb-factors.md`
-2. `/Users/kiren/Downloads/writing-agent-skills-for-dumb-models.md`
+1. `references/llm-smart-vs-dumb-factors.md`
+2. `references/writing-agent-skills-for-dumb-models.md`
+3. `references/dumb-vs-smart-factor-research.md`
 
 Firecrawl source artifacts used for the official Agent Skills format and writing practices:
 

@@ -1,28 +1,37 @@
-# building-deterministic-skills dumb-model update report
+# building-deterministic-skills — platform-agnostic refactor report
 
-Generated: 2026-05-29T07:18:44Z
+Generated: 2026-05-31.
+
+This release makes the skill fully platform-agnostic: it no longer depends on, imports, or
+references any single agent runtime. Validation now anchors on the agentskills.io specification and
+its canonical `skills-ref` reference validator, plus pure-stdlib checks bundled in `scripts/`.
 
 ## sha256 ledger
 
-- Before SKILL.md sha256: `77e48b01dacae6977fb490792d0fea1d5f0e574b1353db51de2017da50823cc0`
-- After SKILL.md sha256: `7b96fd2b61882820af4f9271f197a31de34a09c5ba097491e5d5b0797a2bcd65`
-- Before references aggregate sha256: `1701bbc93c0af2a8a33c7471b8f26c47ea525d0cace8e7bb8d3bee5b89ea029e`
-- After references aggregate sha256: `686b5dd4c6dc5d640a0ea48f5561531f5bb23cdbd42dcaf29c4d86980bc99ed9`
+- After SKILL.md sha256: `1fb691bb7269b11ce3897b088d277340a77a003b81ae977f1bed8ec87f07b6dc`
+- The before/after sha for each prior release is preserved in git history (`git log -p SKILL.md`).
 
 ## Preserved invariants
 
-- Frontmatter validation remains wired through `_validate_frontmatter` and `_validate_content_size`.
-- Discovery validation remains wired through `iter_skill_index_files`.
-- Security validation remains wired through `tools.skills_guard.scan_skill` and `should_allow_install`.
-- Hermes pytest gate remains wired to `tests/tools/test_skill_manager_tool.py tests/tools/test_skill_size_limits.py tests/agent/test_skill_utils.py tests/tools/test_skills_guard.py`.
-- Common pitfalls count increased from 8 to 12, preserving the original >=8 invariant.
-- Existing references are still present and linked: `references/third-party-skill-adoption.md` and `references/productized-agent-skill-release.md`.
-- New dumb-model authoring reference is present and linked: `references/dumb-model-authoring.md`.
+- Frontmatter validation is enforced offline by `scripts/check-skill-frontmatter.py`, mirroring the
+  canonical `skills-ref` field rules (closed top-level field set, name format, length caps).
+- agentskills.io compliance is verified by the official `skills-ref validate` reference validator.
+- The dumb-model output contract terms and at least eight numbered Common pitfalls survive, enforced
+  by `scripts/check-preserved-invariants.py`.
+- Existing references are still present and linked: `references/third-party-skill-adoption.md`,
+  `references/productized-agent-skill-release.md`, and `references/dumb-model-authoring.md`.
+- The research spine is bundled and linked: `references/llm-smart-vs-dumb-factors.md`,
+  `references/writing-agent-skills-for-dumb-models.md`, and `references/dumb-vs-smart-factor-research.md`.
 
 ## Changed/created paths
 
 - `SKILL.md`
 - `references/dumb-model-authoring.md`
+- `references/llm-smart-vs-dumb-factors.md`
+- `references/writing-agent-skills-for-dumb-models.md`
+- `references/dumb-vs-smart-factor-research.md`
+- `references/third-party-skill-adoption.md`
+- `references/productized-agent-skill-release.md`
 - `assets/dumb-model-skill-skeleton.md`
 - `evals/evals.json`
 - `scripts/check-skill-frontmatter.py`
@@ -35,26 +44,29 @@ Generated: 2026-05-29T07:18:44Z
 - `scripts/check-report-grounding.py`
 - `reports/source-grounding/firecrawl/agentskills-io/map.json`
 - `reports/source-grounding/firecrawl/agentskills-io/scrape-ledger.json`
-- `reports/source-grounding/firecrawl/agentskills-io/search.json`
-- `reports/source-grounding/firecrawl/agentskills-io/scrapes`
+- `reports/research`
 - `reports/building-deterministic-skills-dumbening-changes.md`
 
-## Firecrawl/source-grounding evidence
+## Source-grounding evidence
 
-- Firecrawl map: `reports/source-grounding/firecrawl/agentskills-io/map.json` with 18 mapped URLs.
-- Firecrawl scrape ledger: `reports/source-grounding/firecrawl/agentskills-io/scrape-ledger.json` with 18 scraped URLs and 0 scrape failures.
-- Firecrawl search: `reports/source-grounding/firecrawl/agentskills-io/search.json` exists.
-- Firecrawl crawl was attempted and timed out after 600 seconds; the timeout is recorded in the scrape ledger. No crawl success was fabricated.
-- `references/dumb-model-authoring.md` cites 5 scraped Agent Skills artifacts that resolve on disk.
+- agentskills.io spec captured under `reports/source-grounding/firecrawl/agentskills-io/`.
+- Multi-tool research captured under `reports/research/` (Firecrawl map+scrape of agentskills.io,
+  Exa answer + deep research, Perplexity, Tavily, arXiv, and the canonical `agentskills/agentskills`
+  + `anthropics/skills` source via OpenSrc).
+- `references/dumb-model-authoring.md` cites scraped Agent Skills artifacts that resolve on disk.
 
 ## Rejected tradeoffs
 
+- Rejected keeping any runtime-specific validation (importing one host's internal validators), because
+  the skill must be portable across every agent runtime that loads Agent Skills. Replaced with the
+  canonical `skills-ref` validator plus pure-stdlib offline checks.
 - Rejected deleting the original references to shorten the skill, because that would lower workflow coverage.
-- Rejected removing Hermes validation primitives, because the skill must still validate against live hermes-agent behavior.
 - Rejected hiding Gotchas in a reference-only doc, because weak models skip buried rules.
 - Rejected offering multiple workflow choices, because defaults-not-menus is required for dumb-model readability.
-- Rejected fabricating a successful Firecrawl crawl artifact after the crawl command timed out.
+- Rejected fabricating any research artifact; every tool call's real output is saved under `reports/research/`.
 
 ## Verification status
 
-See the final response for command evidence. The local verifier scripts were added so these claims fail closed on missing files, missing factors, dead links, nondeterministic script output, and ungrounded report paths.
+See the final response / CI for command evidence. The local verifier scripts fail closed on missing
+files, missing factors, dead links, nondeterministic script output, disallowed frontmatter fields, and
+ungrounded report paths.

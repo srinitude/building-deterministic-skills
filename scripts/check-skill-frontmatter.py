@@ -1,18 +1,23 @@
 #!/usr/bin/env python3
-"""Validate SKILL.md frontmatter.
+"""Validate SKILL.md frontmatter against the agentskills.io specification.
 
-Prefers the live Hermes validators (`tools.skill_manager_tool`) when importable
-— the source of truth on a Hermes host. In a clean CI runner where Hermes is
-not installed, it falls back to a standalone check mirroring the same rules:
-starts with `---`, closed frontmatter, `name` matches the parent directory,
-`description` present and <= 1024 chars, non-empty body, content <= 100000 chars.
+Platform-agnostic: standard library only, no dependency on any agent runtime.
+Mirrors the canonical `skills-ref` field rules so a skill can be checked offline
+before shipping:
+  - starts at byte 0 with `---` and closes the frontmatter block;
+  - `name`: 1-64 chars, lowercase letters/digits/hyphens, no leading/trailing/
+    consecutive hyphens, equals the parent directory name;
+  - `description`: present, non-empty, <= 1024 chars;
+  - only the allowed top-level fields appear (closed set);
+  - `compatibility` (if present) <= 500 chars;
+  - non-empty body after frontmatter; total content <= 100000 chars.
 """
 from __future__ import annotations
 
 import argparse
 import json
 import re
-import sys
+import unicodedata
 from pathlib import Path
 
 MAX_DESCRIPTION_LENGTH = 1024
@@ -29,50 +34,43 @@ def skill_root() -> Path:
     return Path(__file__).resolve().parents[1]
 
 
-def try_load_hermes():
-    candidates = [Path.cwd(), Path.home() / ".hermes" / "hermes-agent"]
-    for candidate in candidates:
-        if (candidate / "tools" / "skill_manager_tool.py").exists():
-            sys.path.insert(0, str(candidate))
-            try:
-                from tools.skill_manager_tool import (  # type: ignore
-                    MAX_DESCRIPTION_LENGTH as MDL,
-                    _validate_content_size,
-                    _validate_frontmatter,
-                )
-                return MDL, _validate_content_size, _validate_frontmatter
-            except Exception:
-                return None
-    return None
+def split_frontmatter(content: str) -> str:
+    assert content.startswith("---"), "SKILL.md must start with YAML frontmatter (---)"
+    end = re.search(r"\n---\s*\n", content[3:])
+    assert end is not None, "frontmatter is not closed with a '---' line"
+    assert len(content) <= MAX_SKILL_CONTENT_CHARS, "SKILL.md exceeds content limit"
+    body = content[end.end() + 3:].strip()
+    assert body, "SKILL.md must have a body after the frontmatter"
+    return content[3:end.start() + 3]
 
 
-def parse_frontmatter(content: str) -> dict:
-    end = content[3:].find("\n---")
-    if end < 0:
-        raise AssertionError("frontmatter closing marker missing")
-    raw = content[3 : end + 3]
+def parse_frontmatter(raw: str) -> dict:
     try:
         import yaml  # type: ignore
 
         parsed = yaml.safe_load(raw)
     except Exception:
+        # Minimal stdlib fallback: read top-level "key:" lines only.
         parsed = {}
         for line in raw.splitlines():
-            m = re.match(r"^([A-Za-z0-9_]+):\s*(.*)$", line)
-            if m and m.group(2):
+            if line.startswith((" ", "\t")):
+                continue
+            m = re.match(r"^([A-Za-z0-9_-]+):\s*(.*)$", line)
+            if m:
                 parsed[m.group(1)] = m.group(2).strip()
-    if not isinstance(parsed, dict):
-        raise AssertionError("frontmatter is not a mapping")
+    assert isinstance(parsed, dict), "frontmatter must be a YAML mapping"
     return parsed
 
 
-def standalone_validate(content: str) -> None:
-    assert content.startswith("---"), "SKILL.md must start with frontmatter"
-    end = re.search(r"\n---\s*\n", content[3:])
-    assert end is not None, "frontmatter not closed with '---'"
-    assert len(content) <= MAX_SKILL_CONTENT_CHARS, "SKILL.md exceeds content limit"
-    body = content[end.end() + 3 :].strip()
-    assert body, "SKILL.md must have a body after frontmatter"
+def validate_name(name, parent: str) -> None:
+    assert isinstance(name, str) and name.strip(), "frontmatter must include a non-empty name"
+    name = unicodedata.normalize("NFKC", name.strip())
+    assert 1 <= len(name) <= MAX_NAME_LENGTH, "name length out of [1,64]"
+    assert name == name.lower(), "name must be lowercase"
+    assert not (name.startswith("-") or name.endswith("-")), "name cannot start/end with a hyphen"
+    assert "--" not in name, "name cannot contain consecutive hyphens"
+    assert all(c.isalnum() or c == "-" for c in name), "name allows only letters, digits, hyphens"
+    assert name == unicodedata.normalize("NFKC", parent), "name must match the parent directory name"
 
 
 def main() -> int:
@@ -85,34 +83,16 @@ def main() -> int:
 
     root = skill_root()
     content = (root / "SKILL.md").read_text()
+    raw = split_frontmatter(content)
+    parsed = parse_frontmatter(raw)
 
-    hermes = try_load_hermes()
-    if hermes is not None:
-        max_description, validate_size, validate_frontmatter = hermes
-        fm_error = validate_frontmatter(content)
-        size_error = validate_size(content)
-        assert fm_error is None, fm_error
-        assert size_error is None, size_error
-        mode = "hermes"
-    else:
-        standalone_validate(content)
-        max_description = MAX_DESCRIPTION_LENGTH
-        mode = "standalone"
+    validate_name(parsed.get("name"), root.name)
 
-    parsed = parse_frontmatter(content)
-    name = parsed.get("name")
-    assert name == root.name, "frontmatter name must match parent directory"
     assert "description" in parsed, "frontmatter must include description"
-    assert len(str(parsed["description"])) <= max_description, "description exceeds limit"
+    description = str(parsed["description"]).strip()
+    assert description, "description must be non-empty"
+    assert len(description) <= MAX_DESCRIPTION_LENGTH, "description exceeds 1024 chars"
 
-    # agentskills.io canonical name rules.
-    assert isinstance(name, str) and 1 <= len(name) <= MAX_NAME_LENGTH, "name length out of [1,64]"
-    assert name == name.lower(), "name must be lowercase"
-    assert not (name.startswith("-") or name.endswith("-")), "name cannot start/end with a hyphen"
-    assert "--" not in name, "name cannot contain consecutive hyphens"
-    assert all(c.isalnum() or c == "-" for c in name), "name allows only letters, digits, hyphens"
-
-    # agentskills.io closed set of allowed top-level frontmatter fields.
     extra = set(parsed.keys()) - ALLOWED_TOP_LEVEL_FIELDS
     assert not extra, (
         f"disallowed top-level frontmatter field(s): {sorted(extra)}. "
@@ -121,7 +101,7 @@ def main() -> int:
     if "compatibility" in parsed:
         assert len(str(parsed["compatibility"])) <= MAX_COMPATIBILITY_LENGTH, "compatibility exceeds 500 chars"
 
-    print(json.dumps({"PASS_FRONTMATTER": True, "mode": mode, "name": name}, sort_keys=True))
+    print(json.dumps({"PASS_FRONTMATTER": True, "name": parsed.get("name")}, sort_keys=True))
     return 0
 
 
