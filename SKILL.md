@@ -3,6 +3,7 @@ name: building-deterministic-skills
 description: >
   Build deterministic Agent Skills that weak models can execute without guessing. Use when the user says "build a deterministic skill", "make an agentskills.io-compliant skill", "validate a skill against hermes-agent", "make the skill easy for dumb models", "write a skill generator", "add skill evals", or "ensure skills_guard passes", even if they do not say "Agent Skills" explicitly. Do NOT use for ordinary editing, pure trigger tuning, non-Hermes prompt engineering, hermes-agent-skill-authoring, or skill-description-optimizer tasks.
 license: Apache-2.0
+version: 0.1.0
 metadata:
   hermes:
     tags: [skills, authoring, deterministic, agentskills, validation, weak-models]
