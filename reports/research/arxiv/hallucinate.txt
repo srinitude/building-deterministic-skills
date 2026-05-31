@@ -1,0 +1,23 @@
+Found 1227085 results (showing 3)
+
+1. How do language models learn facts? Dynamics, curricula and hallucinations
+   ID: 2503.21676v2 | Published: 2025-03-27 | Updated: 2025-07-24
+   Authors: Nicolas Zucchet, Jörg Bornschein, Stephanie Chan, Andrew Lampinen, Razvan Pascanu, Soham De
+   Categories: cs.CL, cs.LG
+   Abstract: Large language models accumulate vast knowledge during pre-training, yet the dynamics governing this acquisition remain poorly understood. This work investigates the learning dynamics of language models on a synthetic factual recall task, uncovering three key findings: First, language models learn i...
+   Links: https://arxiv.org/abs/2503.21676 | https://arxiv.org/pdf/2503.21676
+
+2. THaMES: An End-to-End Tool for Hallucination Mitigation and Evaluation in Large Language Models
+   ID: 2409.11353v3 | Published: 2024-09-17 | Updated: 2024-11-30
+   Authors: Mengfei Liang, Archish Arun, Zekun Wu, Cristian Munoz, Jonathan Lutch, Emre Kazim, Adriano Koshiyama, Philip Treleaven
+   Categories: cs.CL
+   Abstract: Hallucination, the generation of factually incorrect content, is a growing challenge in Large Language Models (LLMs). Existing detection and mitigation methods are often isolated and insufficient for domain-specific needs, lacking a standardized pipeline. This paper introduces THaMES (Tool for Hallu...
+   Links: https://arxiv.org/abs/2409.11353 | https://arxiv.org/pdf/2409.11353
+
+3. Hallucination Detection with Small Language Models
+   ID: 2506.22486v1 | Published: 2025-06-24 | Updated: 2025-06-24
+   Authors: Ming Cheung
+   Categories: cs.CL, cs.AI
+   Abstract: Since the introduction of ChatGPT, large language models (LLMs) have demonstrated significant utility in various tasks, such as answering questions through retrieval-augmented generation. Context can be retrieved using a vectorized database, serving as a foundation for LLMs to generate responses. Ho...
+   Links: https://arxiv.org/abs/2506.22486 | https://arxiv.org/pdf/2506.22486
+

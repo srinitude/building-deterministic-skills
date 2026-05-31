@@ -15,8 +15,23 @@ def skill_root() -> Path:
     return Path(__file__).resolve().parents[1]
 
 
+def strip_code_fences(text: str) -> str:
+    """Blank out fenced code blocks so illustrative example paths inside them
+    (e.g. `references/env-vars.md` in a how-to snippet) are not treated as real
+    links. Real reference pointers live in prose, not inside ``` fences."""
+    out = []
+    in_fence = False
+    for line in text.splitlines():
+        if line.lstrip().startswith("```"):
+            in_fence = not in_fence
+            out.append("")
+            continue
+        out.append("" if in_fence else line)
+    return "\n".join(out)
+
+
 def scan_file(path: Path, root: Path) -> list[str]:
-    text = path.read_text()
+    text = strip_code_fences(path.read_text())
     misses = []
     for match in LINK_RE.findall(text):
         candidate = root / match.rstrip(".,;:")

@@ -1,0 +1,72 @@
+{
+  "choices": [
+    {
+      "delta": {
+        "content": "",
+        "role": "assistant"
+      },
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "An LLM can look **dumb** for several different reasons: too little pretraining scale, weaker architecture or tokenization, aggressive quantization, post-training effects like over-refusal or sycophancy, insufficient test-time compute, long-context failures, poor prompting, or bad measurement. The most reliable way to make **weak models** behave more deterministically is to write skills as *explicit, short, ordered procedures* with tight input/output contracts, low ambiguity, and fallback rules.\n\n## What makes an LLM look dumb vs smart\n\n| Dimension | Makes it look **dumb** | Makes it look **smart** |\n|---|---|---|\n| **Pretraining scale** | Too few parameters, too little data, weak data quality, undertraining, or mismatch between model size and task complexity | Larger scale, more and better data, better compute/data balance, and training that covers the target domain and reasoning patterns |\n| **Architecture** | Less capable backbone choices for the task, weaker attention/memory handling, poor efficiency tradeoffs | Architectures better matched to the workload, with stronger long-range handling and capacity allocation |\n| **Tokenization** | Coarse or awkward tokenization that splits common words, code, numbers, or domain terms poorly, increasing sequence length and error risk | Tokenization that compresses the target domain well and preserves useful structure |\n| **Quantization** | Too aggressive precision loss, especially if quality drops faster than the deployment gain | Mild or well-calibrated quantization that preserves most behavior while improving speed/memory |\n| **Post-training RLHF** | Overly safe, over-refusing, overly chatty, or optimized to please rather than be correct | Alignment that improves helpfulness without suppressing accuracy or encouraging compliance theater |\n| **Sycophancy** | Agreeing with the user even when the user is wrong, which looks like weakness or stupidity | Correcting the user politely and grounding answers in evidence |\n| **Hallucination** | Confidently inventing facts, citations, code, or tool results | Admitting uncertainty, asking for missing info, and staying within verified context |\n| **Inference test-time compute** | Too little reasoning budget, no deliberation, no search, no verification, and one-shot answers to hard problems | More compute for planning, self-checking, search, tool use, and revision |\n| **Context** | Lost-in-the-middle effects, context rot, stale instructions, and long-context degradation | Shorter, structured context with repeated critical constraints and fresh summaries |\n| **Prompting** | Ambiguous goals, conflicting instructions, hidden assumptions, or overloaded prompts | Clear role, explicit objective, constraints, examples, and success criteria |\n| **Measurement** | Bad benchmarks, leakage, narrow tasks, gaming the metric, or judging style instead of correctness | Evaluations that test real task performance, robustness, and calibration |\n\n## The main factors in more detail\n\n- **Pretraining scale** matters because capability usually rises with more parameters, more data, and more compute, but only if the training mix is good enough; a larger model can still look worse if it is undertrained or fed low-quality data.\n- **Architecture and tokenization** matter because they affect how efficiently the model represents patterns, especially code, math, multilingual text, numbers, and long dependencies.\n- **Quantization** is usually a *tradeoff*, not a pure loss: moderate quantization often preserves behavior well, while aggressive quantization can introduce noticeable errors and instability.\n- **Post-training** can make a model *feel* smarter or dumber without changing raw capability: RLHF can improve helpfulness, but it can also increase over-refusal, compliance, or polite wrongness; sycophancy and hallucination are classic failure modes.\n- **Test-time compute** is a major hidden variable: many tasks improve if the model gets time to plan, branch, verify, and revise instead of answering in one pass.\n- **Context handling** is a real bottleneck: models can forget key instructions in the middle of long prompts, or degrade when the prompt becomes too long, repetitive, or stale.\n- **Prompting** can swing apparent intelligence a lot, because many failures are instruction-following failures, not knowledge failures.\n- **Measurement** can mislead you into thinking a model is smart when it is only good at the benchmark format, or dumb when the benchmark misses its strengths.\n\n## Authoring countermeasures for agent skills that weak models follow deterministically\n\nIf you want the weakest models to follow a skill reliably, write it like a *machine procedure*, not like a human policy document.\n\n- **Use one goal per skill**\n- **State the output format explicitly**\n- **Use short, numbered steps**\n- **Define mandatory stop conditions**\n- **Specify what to do when input is missing**\n- **Provide one canonical example**\n- **Ban improvisation where it is unsafe**\n- **Keep rules local and concrete**\n- **Repeat the critical constraints near the end**\n- **Prefer closed-world decisions over open-ended reasoning**\n- **Use if/then branches for common cases**\n- **Add a deterministic fallback**\n- **Minimize cross-references to other docs**\n- **Avoid vague verbs like \u201chandle,\u201d \u201cconsider,\u201d or \u201coptimize\u201d unless defined**\n- **Separate policy from procedure**\n- **Include negative examples only when necessary**\n- **Make every step independently checkable**\n- **Write for the smallest model you expect to run it**\n\n## A practical template for weak-model agent skills\n\nUse this structure:\n\n1. **Purpose:** one sentence.\n2. **Inputs:** exact fields required.\n3. **Output:** exact schema or format.\n4. **Procedure:** 3\u20137 numbered steps.\n5. **Decision rules:** explicit if/then cases.\n6. **Fallback:** what to do if uncertain.\n7. **Do not:** list prohibited behaviors.\n8. **Example:** one minimal correct example.\n\n## What helps determinism most\n\n- **Constrain the action space**\n- **Constrain the output format**\n- **Constrain the vocabulary**\n- **Constrain the number of steps**\n- **Constrain the allowed sources of truth**\n- **Constrain when the model may ask a question**\n- **Constrain when it must refuse or defer**\n\n## What to avoid if you want weak models to comply\n\n- Long prose instructions\n- Multiple objectives in one skill\n- Implicit context or hidden assumptions\n- \u201cUse your judgment\u201d without boundaries\n- Open-ended creativity inside operational steps\n- Rules scattered across many prompts\n- Dependencies on subtle chain-of-thought behavior\n- Benchmark-style instructions that reward style over correctness\n\n## A useful authoring heuristic\n\nIf a weak model can fail, assume it **will** fail unless the skill tells it:\n- what to do,\n- when to stop,\n- what to output,\n- and what to do when the input is bad.\n\nIf you want, I can turn this into a **checklist for prompt engineers** or a **skill-spec template** you can reuse for agents.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "citations": [
+    "https://www.youtube.com/watch?v=t1pd_jLxXoM",
+    "https://huggingface.co/spaces/HuggingFaceTB/smol-training-playbook",
+    "https://news.ycombinator.com/item?id=43325049",
+    "https://blogs.gwu.edu/longjie-yang/author/longjie-yang/"
+  ],
+  "created": 1780251725,
+  "id": "b1a4d863-bf60-4b7e-9a52-898b69a9a410",
+  "model": "sonar-pro",
+  "object": "chat.completion",
+  "search_results": [
+    {
+      "date": "2024-03-21",
+      "last_updated": "2025-11-14",
+      "snippet": "This video discusses if quantization makes AI model dumb and stupid and if quantization is use-case dependent in plain English.",
+      "source": "web",
+      "title": "Does Quantization Make LLMs Dumb? - YouTube",
+      "url": "https://www.youtube.com/watch?v=t1pd_jLxXoM"
+    },
+    {
+      "date": "2025-10-30",
+      "last_updated": "2026-05-21",
+      "snippet": "But before we can set up our ablations, we need to make some foundational choices about architecture type and model size. ... silly.\"? Options: - ...",
+      "source": "web",
+      "title": "The Smol Training Playbook - Hugging Face",
+      "url": "https://huggingface.co/spaces/HuggingFaceTB/smol-training-playbook"
+    },
+    {
+      "date": "2025-03-14",
+      "last_updated": "2026-05-31",
+      "snippet": "Whether or not he's right big picture, the specific thing about runaway tokens is dumb as hell. infamouscow on March 14, 2025 | prev | next ...",
+      "source": "web",
+      "title": "Ask HN: Any insider takes on Yann LeCun's push against current ...",
+      "url": "https://news.ycombinator.com/item?id=43325049"
+    },
+    {
+      "date": "2025-05-12",
+      "last_updated": "2026-03-17",
+      "snippet": "This suggests that the capability threshold might be related to model scale or architecture decisions rather than training methodology. ... stupid ...",
+      "source": "web",
+      "title": "longjie.yang's Site - GW Blogs",
+      "url": "https://blogs.gwu.edu/longjie-yang/author/longjie-yang/"
+    }
+  ],
+  "usage": {
+    "completion_tokens": 1445,
+    "cost": {
+      "input_tokens_cost": 0.00023,
+      "output_tokens_cost": 0.02167,
+      "request_cost": 0.006,
+      "total_cost": 0.02791
+    },
+    "prompt_tokens": 78,
+    "search_context_size": "low",
+    "total_tokens": 1523
+  }
+}

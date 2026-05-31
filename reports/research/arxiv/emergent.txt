@@ -1,0 +1,23 @@
+Found 1532858 results (showing 3)
+
+1. Response: Emergent analogical reasoning in large language models
+   ID: 2308.16118v2 | Published: 2023-08-30 | Updated: 2024-05-01
+   Authors: Damian Hodel, Jevin West
+   Categories: cs.CL, cs.AI
+   Abstract: In their recent Nature Human Behaviour paper, "Emergent analogical reasoning in large language models," (Webb, Holyoak, and Lu, 2023) the authors argue that "large language models such as GPT-3 have acquired an emergent ability to find zero-shot solutions to a broad range of analogy problems." In th...
+   Links: https://arxiv.org/abs/2308.16118 | https://arxiv.org/pdf/2308.16118
+
+2. Enhancing Human-Like Responses in Large Language Models
+   ID: 2501.05032v2 | Published: 2025-01-09 | Updated: 2026-02-01
+   Authors: Ethem Yağız Çalık, Talha Rüzgar Akkuş
+   Categories: cs.CL, cs.AI
+   Abstract: This paper explores the advancements in making large language models (LLMs) more human-like. We focus on techniques that enhance natural language understanding, conversational coherence, and emotional intelligence in AI systems. The study evaluates various approaches, including fine-tuning with dive...
+   Links: https://arxiv.org/abs/2501.05032 | https://arxiv.org/pdf/2501.05032
+
+3. Large Language Models Reasoning Abilities Under Non-Ideal Conditions After RL-Fine-Tuning
+   ID: 2508.04848v1 | Published: 2025-08-06 | Updated: 2025-08-06
+   Authors: Chang Tian, Matthew B. Blaschko, Mingzhe Xing, Xiuxing Li, Yinliang Yue, Marie-Francine Moens
+   Categories: cs.AI
+   Abstract: Reinforcement learning (RL) has become a key technique for enhancing the reasoning abilities of large language models (LLMs), with policy-gradient algorithms dominating the post-training stage because of their efficiency and effectiveness. However, most existing benchmarks evaluate large-language-mo...
+   Links: https://arxiv.org/abs/2508.04848 | https://arxiv.org/pdf/2508.04848
+

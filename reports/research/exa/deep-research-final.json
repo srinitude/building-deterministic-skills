@@ -1,0 +1,269 @@
+{
+  "citations": [
+    {
+      "id": "https://cs.stanford.edu/~nfliu/papers/lost-in-the-middle.tacl2023.pdf",
+      "title": "https://cs.stanford.edu/~nfliu/papers/lost-in-the-middle.tacl2023.pdf",
+      "url": "https://cs.stanford.edu/~nfliu/papers/lost-in-the-middle.tacl2023.pdf"
+    },
+    {
+      "id": "https://magazine.sebastianraschka.com/p/categories-of-inference-time-scaling",
+      "title": "Categories of Inference-Time Scaling for Improved LLM Reasoning",
+      "url": "https://magazine.sebastianraschka.com/p/categories-of-inference-time-scaling"
+    },
+    {
+      "id": "https://wssun.github.io/papers/2025-FSE-20230SEWorkshop-Promptware-Engineering.pdf",
+      "title": "https://wssun.github.io/papers/2025-FSE-20230SEWorkshop-Promptware-Engineering.pdf",
+      "url": "https://wssun.github.io/papers/2025-FSE-20230SEWorkshop-Promptware-Engineering.pdf"
+    },
+    {
+      "id": "https://arxiv.org/html/2602.04297v1",
+      "title": "Revisiting Prompt Sensitivity in Large Language Models for Text Classification: The Role of Prompt Underspecification",
+      "url": "https://arxiv.org/html/2602.04297v1"
+    },
+    {
+      "id": "https://arxiv.org/html/2509.13196v1",
+      "title": "The Few-shot Dilemma: Over-prompting Large Language Models",
+      "url": "https://arxiv.org/html/2509.13196v1"
+    },
+    {
+      "id": "https://arxiv.org/html/2502.07365v1",
+      "title": "LongReD: Mitigating Short-Text Degradation of Long-Context Large Language Models via Restoration Distillation",
+      "url": "https://arxiv.org/html/2502.07365v1"
+    },
+    {
+      "id": "https://redis.io/blog/context-rot",
+      "title": "Context rot explained (& how to prevent it)",
+      "url": "https://redis.io/blog/context-rot"
+    },
+    {
+      "id": "https://arxiv.org/html/2505.21298v1",
+      "title": "Large Language Models Miss the Multi-Agent Mark",
+      "url": "https://arxiv.org/html/2505.21298v1"
+    },
+    {
+      "id": "https://arxiv.org/html/2406.04244v1",
+      "title": "Benchmark Data Contamination of Large Language Models: A Survey",
+      "url": "https://arxiv.org/html/2406.04244v1"
+    },
+    {
+      "id": "https://arxiv.org/abs/2307.03172",
+      "title": "[2307.03172] Lost in the Middle: How Language Models Use Long Contexts",
+      "url": "https://arxiv.org/abs/2307.03172"
+    },
+    {
+      "id": "https://aclanthology.org/2024.tacl-1.9",
+      "title": "Lost in the Middle: How Language Models Use Long Contexts - ACL Anthology",
+      "url": "https://aclanthology.org/2024.tacl-1.9"
+    },
+    {
+      "id": "https://pub.towardsai.net/superpowers-the-psychology-hack-that-makes-llms-obey-engineering-discipline-no-more-skipped-0d76dd5f5e9e",
+      "title": "Superpowers: The Psychology Hack That Makes LLMs Obey Engineering Discipline (No More Skipped Tests) | by Rick Hightower | Apr, 2026 | Towards AI",
+      "url": "https://pub.towardsai.net/superpowers-the-psychology-hack-that-makes-llms-obey-engineering-discipline-no-more-skipped-0d76dd5f5e9e"
+    },
+    {
+      "id": "https://news.mit.edu/2025/enabling-small-language-models-solve-complex-reasoning-tasks-1212",
+      "title": "Enabling small language models to solve complex reasoning tasks | MIT News | Massachusetts Institute of Technology",
+      "url": "https://news.mit.edu/2025/enabling-small-language-models-solve-complex-reasoning-tasks-1212"
+    },
+    {
+      "id": "https://arxiv.org/abs/2603.21301",
+      "title": "[2603.21301] enhancing reasoning accuracy in large language models during inference time",
+      "url": "https://arxiv.org/abs/2603.21301"
+    },
+    {
+      "id": "https://arxiv.org/abs/2502.12521",
+      "title": "Inference-Time Computations for LLM Reasoning and Planning: A Benchmark and Insights",
+      "url": "https://arxiv.org/abs/2502.12521"
+    },
+    {
+      "id": "https://rlhfbook.com/book.pdf",
+      "title": "Reinforcement Learning from Human Feedback",
+      "url": "https://rlhfbook.com/book.pdf"
+    },
+    {
+      "id": "https://arxiv.org/abs/2411.15287",
+      "title": "Sycophancy in Large Language Models: Causes and Mitigations",
+      "url": "https://arxiv.org/abs/2411.15287"
+    },
+    {
+      "id": "https://arxiv.org/abs/2602.01002",
+      "title": "How RLHF Amplifies Sycophancy",
+      "url": "https://arxiv.org/abs/2602.01002"
+    },
+    {
+      "id": "https://arxiv.org/abs/2305.02301",
+      "title": "Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes",
+      "url": "https://arxiv.org/abs/2305.02301"
+    },
+    {
+      "id": "https://arxiv.org/abs/2402.18158",
+      "title": "[2402.18158] Evaluating Quantized Large Language Models",
+      "url": "https://arxiv.org/abs/2402.18158"
+    },
+    {
+      "id": "https://arxiv.org/abs/2511.03825",
+      "title": "[2511.03825] How Different Tokenization Algorithms Impact LLMs and Transformer Models for Binary Code Analysis",
+      "url": "https://arxiv.org/abs/2511.03825"
+    },
+    {
+      "id": "https://arxiv.org/html/2412.03220v1",
+      "title": "Survey of different Large Language Model Architectures: Trends, Benchmarks, and Challenges",
+      "url": "https://arxiv.org/html/2412.03220v1"
+    },
+    {
+      "id": "https://icml.cc/virtual/2025/poster/44780",
+      "title": "ICML Poster Programming Every Example: Lifting Pre-training Data Quality Like Experts at Scale",
+      "url": "https://icml.cc/virtual/2025/poster/44780"
+    },
+    {
+      "id": "https://openreview.net/forum?id=x54wwB6QvL",
+      "title": "Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining | OpenReview",
+      "url": "https://openreview.net/forum?id=x54wwB6QvL"
+    },
+    {
+      "id": "https://arxiv.org/html/2402.11537v3",
+      "title": "Deciphering the Impact of Pretraining Data on Large Language Models through Machine Unlearning",
+      "url": "https://arxiv.org/html/2402.11537v3"
+    },
+    {
+      "id": "https://promptingguide.ai/techniques/fewshot",
+      "title": "Redirecting (308)",
+      "url": "https://www.promptingguide.ai/techniques/fewshot"
+    },
+    {
+      "id": "https://launchdarkly.com/blog/prompt-engineering-best-practices",
+      "title": "Prompt Engineering Best Practices: Tutorial & Examples | LaunchDarkly",
+      "url": "https://launchdarkly.com/blog/prompt-engineering-best-practices"
+    },
+    {
+      "id": "https://medium.com/@ligtleyang/three-pillars-of-best-practice-in-prompt-engineering-few-shot-chain-of-thought-and-structured-a7ce8a105dd9",
+      "title": "Three Pillars of Best Practice in Prompt Engineering : Few-Shot, Chain-of-Thought, and Structured Context | by Yu Yang, Ph.D., PE, PMP | Medium",
+      "url": "https://medium.com/@ligtleyang/three-pillars-of-best-practice-in-prompt-engineering-few-shot-chain-of-thought-and-structured-a7ce8a105dd9"
+    },
+    {
+      "id": "https://digitalocean.com/community/tutorials/_few-shot-prompting-techniques-examples-best-practices",
+      "title": "Few-Shot Prompting: Techniques, Examples, and Best Practices | DigitalOcean",
+      "url": "https://www.digitalocean.com/community/tutorials/_few-shot-prompting-techniques-examples-best-practices"
+    },
+    {
+      "id": "https://k2view.com/blog/prompt-engineering-techniques",
+      "title": "Prompt engineering techniques: Top 6 for 2026",
+      "url": "https://www.k2view.com/blog/prompt-engineering-techniques"
+    },
+    {
+      "id": "https://jameshoward.us/2024/11/26/context-degradation-syndrome-when-large-language-models-lose-the-plot",
+      "title": "Context Degradation Syndrome: When Large Language Models Lose the Plot\n \u2013 James Howard",
+      "url": "https://jameshoward.us/2024/11/26/context-degradation-syndrome-when-large-language-models-lose-the-plot"
+    },
+    {
+      "id": "https://medium.com/@socialscholarly/why-im-not-worried-about-llms-long-context-problem-eed21db44687",
+      "title": "Why I\u2019m not worried about LLMs long context problem. | by Social Scholarly | Medium",
+      "url": "https://medium.com/@socialscholarly/why-im-not-worried-about-llms-long-context-problem-eed21db44687"
+    },
+    {
+      "id": "https://dl.acm.org/doi/full/10.1145/3765766.3765803",
+      "title": "Human-Like Remembering and Forgetting in LLM Agents: An ACT-R-Inspired Memory Architecture | Proceedings of the 13th International Conference on Human-Agent Interaction",
+      "url": "https://dl.acm.org/doi/full/10.1145/3765766.3765803"
+    },
+    {
+      "id": "https://producttalk.org/context-rot",
+      "title": "Context Rot: Why AI Gets Worse the Longer You Chat (And How to Fix It)",
+      "url": "https://www.producttalk.org/context-rot"
+    },
+    {
+      "id": "https://youtube.com/watch?v=Kf3LeaUGwlg",
+      "title": "Lost in the Middle: How Language Models use Long Context - Explained!",
+      "url": "https://www.youtube.com/watch?v=Kf3LeaUGwlg"
+    },
+    {
+      "id": "https://sciencedirect.com/science/article/pii/S2666389925001084",
+      "title": "https://www.sciencedirect.com/science/article/pii/S2666389925001084",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2666389925001084"
+    },
+    {
+      "id": "https://arxiv.org/html/2507.18638v2",
+      "title": "Prompt Engineering and the Effectiveness of Large Language Models in Enhancing Human Productivity",
+      "url": "https://arxiv.org/html/2507.18638v2"
+    },
+    {
+      "id": "https://reference-global.com/download/book/9789365894936.pdf",
+      "title": "Prompt Engineering",
+      "url": "https://reference-global.com/download/book/9789365894936.pdf"
+    },
+    {
+      "id": "https://medium.com/@cenghanbayram35/lost-in-the-middle-in-llms-86e461dc7212",
+      "title": "Lost in the Middle in LLMS. Why large language models ignore the\u2026 | by Cengizhan Bayram | Medium",
+      "url": "https://medium.com/@cenghanbayram35/lost-in-the-middle-in-llms-86e461dc7212"
+    },
+    {
+      "id": "https://thebigdataguy.substack.com/p/the-profound-impact-of-prompt-variations",
+      "title": "The BIG DATA guy",
+      "url": "https://thebigdataguy.substack.com/p/the-profound-impact-of-prompt-variations"
+    },
+    {
+      "id": "https://faculty.cc.gatech.edu/~srijan/pubs/few-shot-adversarial-robustness-acl2023.pdf",
+      "title": "https://faculty.cc.gatech.edu/~srijan/pubs/few-shot-adversarial-robustness-acl2023.pdf",
+      "url": "https://faculty.cc.gatech.edu/~srijan/pubs/few-shot-adversarial-robustness-acl2023.pdf"
+    },
+    {
+      "id": "https://aclanthology.org/2025.globalnlp-1.2.pdf",
+      "title": "Prompt Balance Matters: Understanding How Imbalanced Few-Shot Learning Affects Multilingual Sense Disambiguation in LLMs",
+      "url": "https://aclanthology.org/2025.globalnlp-1.2.pdf"
+    },
+    {
+      "id": "https://openreview.net/forum?id=ALISPmDPCq&referrer=%5Bthe+profile+of+Mark+Niklas+Mueller%5D%28%2Fprofile%3Fid%3D%7EMark_Niklas_Mueller2%29",
+      "title": "ConStat: Performance-Based Contamination Detection in Large Language Models | OpenReview",
+      "url": "https://openreview.net/forum?id=ALISPmDPCq&referrer=%5Bthe+profile+of+Mark+Niklas+Mueller%5D%28%2Fprofile%3Fid%3D%7EMark_Niklas_Mueller2%29"
+    },
+    {
+      "id": "https://repositum.tuwien.at/bitstream/20.500.12708/216244/1/Mathis Tobias Gallus - 2025 - Identifying Data Contamination in LLMs for...pdf",
+      "title": "https://repositum.tuwien.at/bitstream/20.500.12708/216244/1/Mathis Tobias Gallus - 2025 - Identifying Data Contamination in LLMs for...pdf",
+      "url": "https://repositum.tuwien.at/bitstream/20.500.12708/216244/1/Mathis Tobias Gallus - 2025 - Identifying Data Contamination in LLMs for...pdf"
+    },
+    {
+      "id": "https://researchgate.net/publication/381227505_Benchmark_Data_Contamination_of_Large_Language_Models_A_Survey",
+      "title": "https://www.researchgate.net/publication/381227505_Benchmark_Data_Contamination_of_Large_Language_Models_A_Survey",
+      "url": "https://www.researchgate.net/publication/381227505_Benchmark_Data_Contamination_of_Large_Language_Models_A_Survey"
+    },
+    {
+      "id": "https://themoonlight.io/en/review/a-survey-on-data-contamination-for-large-language-models",
+      "title": "https://www.themoonlight.io/en/review/a-survey-on-data-contamination-for-large-language-models",
+      "url": "https://www.themoonlight.io/en/review/a-survey-on-data-contamination-for-large-language-models"
+    },
+    {
+      "id": "https://medium.com/@adnanmasood/tell-claude-its-a-bug-bounty-a-case-in-ai-enabled-intrusion-with-llm-as-attack-multiplier-5e8bb09e6758",
+      "title": "Kill-Chain Compression \u2014 The Weaponization of Large Language Models | by Adnan Masood, PhD. | Medium",
+      "url": "https://medium.com/@adnanmasood/tell-claude-its-a-bug-bounty-a-case-in-ai-enabled-intrusion-with-llm-as-attack-multiplier-5e8bb09e6758"
+    },
+    {
+      "id": "https://dev.to/demianbrecht/stop-asking-llms-to-be-deterministic-e32",
+      "title": "Stop Asking LLMs to Be Deterministic - DEV Community",
+      "url": "https://dev.to/demianbrecht/stop-asking-llms-to-be-deterministic-e32"
+    },
+    {
+      "id": "https://linkedin.com/posts/aishwarya-srinivasan_in-ai-one-of-the-most-fundamental-distinctions-activity-7428286541418041344-Qt7l",
+      "title": "https://www.linkedin.com/posts/aishwarya-srinivasan_in-ai-one-of-the-most-fundamental-distinctions-activity-7428286541418041344-Qt7l",
+      "url": "https://www.linkedin.com/posts/aishwarya-srinivasan_in-ai-one-of-the-most-fundamental-distinctions-activity-7428286541418041344-Qt7l"
+    },
+    {
+      "id": "https://facebook.com/groups/2600net/posts/4462000697356354",
+      "title": "https://www.facebook.com/groups/2600net/posts/4462000697356354",
+      "url": "https://www.facebook.com/groups/2600net/posts/4462000697356354"
+    }
+  ],
+  "costDollars": {
+    "numPages": 63.4345,
+    "numSearches": 19,
+    "reasoningTokens": 832,
+    "total": 0.41633250000000005
+  },
+  "createdAt": 1780251790167,
+  "finishedAt": 1780252022768,
+  "instructions": "Enumerate comprehensively the factors that make a large language model dumb versus smart, organized by stage: (1) pretraining scale and data, (2) architecture, tokenization, quantization, distillation, (3) post-training RLHF, sycophancy, hallucination, (4) inference-time compute and reasoning, (5) context handling including lost-in-the-middle and context rot, (6) prompting and elicitation, (7) measurement and benchmark contamination. For each factor, give the concrete countermeasure an agent-skill author should apply so the weakest models execute the skill deterministically and identically every time. Cite sources.",
+  "model": "exa-research",
+  "output": {
+    "content": "Stage 1 \u2014 Pretraining: scale, data composition, quality, diversity\nFactors that make a model \"dumb\":\n- Insufficient pretraining scale (too few tokens) limits exposure to language patterns and knowledge, yielding poor generalization and fragile reasoning [Deciphering the Impact of Pretraining Data on Large Language Models through Machine Unlearning](https://arxiv.org/html/2402.11537v3).  \n- Low data quality (noisy, duplicated, corrupted pages, or bad HTML) reduces effective signal and increases hallucination risk [Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](https://openreview.net/forum?id=x54wwB6QvL).  \n- Narrow or biased corpora (lack of domain or language diversity) produce brittle models with systemic blind spots [Deciphering the Impact of Pretraining Data on Large Language Models through Machine Unlearning](https://arxiv.org/html/2402.11537v3).  \n- Missing high-impact sources (e.g., books for multi-step reasoning, code corpora for programming skills) reduces certain capabilities even if token counts are large [Deciphering the Impact of Pretraining Data on Large Language Models through Machine Unlearning](https://arxiv.org/html/2402.11537v3).  \n\nFactors that make a model \"smart\":\n- Large, high-quality, and diverse token budgets tuned for data quality produce richer representations and robustness [Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](https://openreview.net/forum?id=x54wwB6QvL).  \n- Including targeted, high-signal datasets (books, curated code, domain collections) improves specific capabilities without requiring orders-of-magnitude more tokens [Deciphering the Impact of Pretraining Data on Large Language Models through Machine Unlearning](https://arxiv.org/html/2402.11537v3).  \n\nDeterministic countermeasures agent-skill authors can apply (so weakest models execute identically every time):\n- Constrain the runtime input space to curated micro-corpora: when a skill requires domain knowledge, prefix skill prompts with a small, fixed, curated knowledge snippet (canonical facts) stored as deterministic context rather than relying on model knowledge learned at pretraining scale [Programming Every Example: Lifting Pre-training Data Quality Like Experts at Scale](https://icml.cc/virtual/2025/poster/44780).  \n  - Implementation: embed a 200\u20131000 token canonical fact block (same for every call) and require the model to answer only from that block; verify by exact-string match tests.  \n- Use deterministic data-refinement pipelines (example-level cleaning) for any in-skill example or micro-corpus \u2014 preprocess with a deterministic program (ProX-style example-level cleaners) so the same cleaned tokens are passed every time [Programming Every Example: Lifting Pre-training Data Quality Like Experts at Scale](https://icml.cc/virtual/2025/poster/44780).  \n- Replace probabilistic reliance on broad knowledge with deterministic lookup: for factual checks, call an external deterministic knowledge store (database / vector store with exact-match fallback) and only accept model output that matches entries under exact-match or deterministic verification logic [Deciphering the Impact of Pretraining Data on Large Language Models through Machine Unlearning](https://arxiv.org/html/2402.11537v3).  \n- Use minimal, high-signal few-shot exemplars embedded in prompt (fixed examples, same order) rather than exposing a long or variable context \u2014 fewer, deterministic examples reduce variance caused by pretraining gaps [Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](https://openreview.net/forum?id=x54wwB6QvL).  \n- Provide explicit failure modes and guardrails in the skill (if evidence absent, return a fixed refusal token), and validate outputs via deterministic validators that reject anything not matching the expected format or that contradicts the canonical block.\n\nStage 2 \u2014 Architecture, tokenization, quantization, distillation\nFactors that make a model \"dumb\":\n- Inefficient or mismatched architecture (poor depth/width tradeoffs, absent optimized attention patterns) causes wasted capacity and slower or incorrect inference behavior [Survey of different Large Language Model Architectures: Trends, Benchmarks, and Challenges](https://arxiv.org/html/2412.03220v1).  \n- Fragile or domain-mismatched tokenization produces broken semantic units (fragmented domain terms), degrading comprehension and adding nondeterminism if different tokenizers/preprocessing are applied [How Different Tokenization Algorithms Impact LLMs and Transformer Models](https://arxiv.org/abs/2511.03825).  \n- Aggressive low-bit quantization without calibration can change numerical behavior and produce inconsistent outputs, especially for complex tasks [Evaluating Quantized Large Language Models](https://arxiv.org/abs/2402.18158).  \n- Naive distillation (label-only, no rationale supervision) strips intermediate reasoning and leads to brittle student behavior [Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes](https://arxiv.org/abs/2305.02301).  \n\nFactors that make a model \"smart\":\n- Architectures optimized for compute and memory (sparse attention, efficient transformer variants, balanced scaling) preserve capability at lower cost [Survey of different Large Language Model Architectures: Trends, Benchmarks, and Challenges](https://arxiv.org/html/2412.03220v1).  \n- Deterministic, consistent tokenization (single tokenizer version, fixed preprocessing) preserves identical input encodings and reduces variability [How Different Tokenization Algorithms Impact LLMs and Transformer Models](https://arxiv.org/abs/2511.03825).  \n- Calibrated 8-bit quantization or quantization-aware training preserves performance while reducing non-deterministic artifacts [Evaluating Quantized Large Language Models](https://arxiv.org/abs/2402.18158).  \n- Rationale-enhanced distillation transfers stepwise reasoning to smaller models, improving consistent behavior on multi-step tasks [Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes](https://arxiv.org/abs/2305.02301).  \n\nDeterministic countermeasures agent-skill authors can apply:\n- Lock tokenizer and preprocessing end-to-end: bundle the tokenizer binary/version, normalization rules, and a deterministic pipeline with your skill. Always run the same deterministic preprocessing on inputs before invoking the model; include a tokenization test harness in CI to ensure identical token sequences across environments [How Different Tokenization Algorithms Impact LLMs and Transformer Models](https://arxiv.org/abs/2511.03825).  \n- Use deterministic inference configurations: prefer greedy decoding or beam search with fixed beams and fixed RNG seeds when exact repeatability is required; record and freeze decoding hyperparameters in the skill manifest. Test the chosen decoding mode on canonical inputs to verify identical outputs [Evaluating Quantized Large Language Models](https://arxiv.org/abs/2402.18158).  \n- Favor calibrated quantized models (8-bit PTQ with calibration set) and validate output determinism across runs; if using low-bit (4-bit) models, add deterministic post-processing validators that reject or canonicalize outputs shown to be unstable [Evaluating Quantized Large Language Models](https://arxiv.org/abs/2402.18158).  \n- When using distilled small models, prefer rationale-enhanced distillation and multi-task distillation (answer + explanation) so the student reproduces teacher stepwise behavior; embed an enforced final-answer extraction step (e.g., output JSON with an \"answer\" field) and validate exact-match postconditions to guarantee identical execution [Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes](https://arxiv.org/abs/2305.02301).  \n- If model architecture constraints hamper determinism, wrap the model with deterministic logic: transform or canonicalize model outputs using deterministic parsers, and reject nonconforming responses before returning them to callers.\n\nStage 3 \u2014 Post-training: RLHF, sycophancy, hallucination\nFactors that make a model \"dumb\":\n- Poorly specified RLHF objectives that prioritize user-pleasing agreement over factual accuracy amplify sycophancy (agreeing even when false) and hallucination [How RLHF Amplifies Sycophancy](https://arxiv.org/abs/2602.01002).  \n- Labeler bias and skewed preference data cause the reward model to prefer flattering or speculative answers rather than conservative factual responses [Sycophancy in Large Language Models: Causes and Mitigations](https://arxiv.org/abs/2411.15287).  \n- Reward optimization with too-large policy updates causes behavioral drift away from the base policy and can increase confident hallucination [Reinforcement Learning from Human Feedback - RLHF Book](https://rlhfbook.com/book.pdf).  \n\nFactors that make a model \"smart\":\n- Rewarding factuality and calibrated humility (preference for uncertainty/refusal when unsupported) reduces hallucinations and discourages sycophancy [Sycophancy in Large Language Models: Causes and Mitigations](https://arxiv.org/abs/2411.15287).  \n- Constraining RLHF with small KL penalties (limiting drift from the base policy) preserves base-model factual priors while improving instruction-following [Reinforcement Learning from Human Feedback - RLHF Book](https://rlhfbook.com/book.pdf).  \n\nDeterministic countermeasures agent-skill authors can apply:\n- Force determinism at skill boundaries: require the model to output a structured, validated schema (tight JSON or fixed tokens) and run deterministic validators that only accept schema-conforming outputs; on failure, return a fixed fallback response. This prevents sycophantic freeform answers from leaking into the skill result [Reinforcement Learning from Human Feedback - RLHF Book](https://rlhfbook.com/book.pdf).  \n- Use disagreement/contradiction prompts and negative examples baked into the skill manifest: include deterministic prompt templates that force the model to consider counter-evidence and to explicitly state confidence on every call (e.g., \"Answer only if evidence present in canonical block; otherwise output: 'INSUFFICIENT_EVIDENCE'\"), reducing sycophancy [How RLHF Amplifies Sycophancy](https://arxiv.org/abs/2602.01002).  \n- Calibrate post-hoc: attach a deterministic truth-checker (external retriever + exact-match verification) before accepting an answer; require passes of the checker for any factual claim and otherwise return a deterministic refusal token [Sycophancy in Large Language Models: Causes and Mitigations](https://arxiv.org/abs/2411.15287).  \n- Fix sampling to deterministic modes (greedy or fixed-seed sampling) inside the skill; combine with ensemble reranking (deterministic ranking of N outputs) and select the top-ranked canonical output according to exact-match rules to ensure identical run-to-run behavior [Reinforcement Learning from Human Feedback - RLHF Book](https://rlhfbook.com/book.pdf).  \n\nStage 4 \u2014 Inference-time compute and reasoning\nFactors that make a model \"dumb\":\n- Limited inference compute (no multiple samples, no reasoning traces) prevents exploration of reasoning paths, causing simple incorrect or unsupported outputs [Inference-Time Computations for LLM Reasoning and Planning: A Benchmark and Insights](https://arxiv.org/abs/2502.12521).  \n- Using stochastic decoding without control introduces non-deterministic final answers across runs [Enhancing Reasoning Accuracy in Large Language Models During Inference Time](https://arxiv.org/abs/2603.21301).  \n- Poor intermediate thought processes (unverified chain-of-thought) yield logically inconsistent or incorrect final answers [Inference-Time Computations for LLM Reasoning and Planning: A Benchmark and Insights](https://arxiv.org/abs/2502.12521).  \n\nFactors that make a model \"smart\":\n- Controlled inference strategies (self-consistency, dual-model agreement, deterministic ensemble voting, or planner/executor separation) improve reasoning quality and robustness [Enhancing Reasoning Accuracy in Large Language Models During Inference Time](https://arxiv.org/abs/2603.21301).  \n- Orchestrating small executors under a deterministic planner (DisCIPL-style) lets weaker models reliably perform subtasks under fixed instructions [Enabling Small Language Models to Solve Complex Reasoning Tasks (MIT News on DisCIPL)](https://news.mit.edu/2025/enabling-small-language-models-solve-complex-reasoning-tasks-1212).  \n\nDeterministic countermeasures agent-skill authors can apply:\n- Use deterministic decoding as a default for skills requiring identical output (greedy or beam with fixed seed). Where improved accuracy is needed, use controlled self-consistency: sample multiple traces with fixed seeds and deterministically choose the majority final answer or a deterministic aggregation function [Enhancing Reasoning Accuracy in Large Language Models During Inference Time](https://arxiv.org/abs/2603.21301).  \n- Decompose tasks into atomic subtasks with deterministic I/O: require each subtask to return a strict schema and validate before running the next subtask. This isolates stochasticity and forces deterministic chaining [Inference-Time Computations for LLM Reasoning and Planning: A Benchmark and Insights](https://arxiv.org/abs/2502.12521).  \n- Implement planner/executor split: use a stable (possibly larger) planner to emit a fixed plan and have smaller deterministic executors follow the plan with locked prompts and deterministic decoding, rejecting deviations [Enabling Small Language Models to Solve Complex Reasoning Tasks (MIT News on DisCIPL)](https://news.mit.edu/2025/enabling-small-language-models-solve-complex-reasoning-tasks-1212).  \n- Add deterministic step-checks and proofs: for reasoning skills, require the model to enumerate numbered steps and include exact-check assertions that the runtime verifier enforces before accepting the answer [Enhancing Reasoning Accuracy in Large Language Models During Inference Time](https://arxiv.org/abs/2603.21301).  \n\nStage 5 \u2014 Context handling: lost-in-the-middle, context rot, context window limits\nFactors that make a model \"dumb\":\n- Lost-in-the-middle positional bias (information in the middle of long contexts is recalled poorly) causes brittle behavior when important facts aren\u2019t at the start/end of the context [Lost in the Middle: How Language Models Use Long Contexts](https://cs.stanford.edu/~nfliu/papers/lost-in-the-middle.tacl2023.pdf).  \n- Context rot (attention dilution across long windows) degrades constraint enforcement and factual recall as context grows [Context rot explained (& how to prevent it) - Redis Blog](https://redis.io/blog/context-rot).  \n- Catastrophic forgetting when adapting to long contexts can reduce short-text performance if models are naively extended [LongReD: Mitigating Short-Text Degradation of Long-Context Large Language Models via Restoration Distillation](https://arxiv.org/html/2502.07365v1).  \n\nFactors that make a model \"smart\":\n- Models with robust long-context training and restoration-distillation techniques preserve short-context behavior and recall across long inputs [LongReD: Mitigating Short-Text Degradation of Long-Context Large Language Models via Restoration Distillation](https://arxiv.org/html/2502.07365v1).  \n\nDeterministic countermeasures agent-skill authors can apply:\n- Position engineering: always place critical facts at the start or the end of the context window (deterministically sandwiching important content) so primacy/recency biases favor retrieval [Lost in the Middle: How Language Models Use Long Contexts](https://cs.stanford.edu/~nfliu/papers/lost-in-the-middle.tacl2023.pdf).  \n- Deterministic external memory / semantic cache: store canonical facts in an external deterministic store (key-value or vector store with deterministic exact-match fallback) and prefetch or inject only the required canonical blocks into prompts; never rely on raw long context to carry essential state [Context rot explained (& how to prevent it) - Redis Blog](https://redis.io/blog/context-rot).  \n- Restoration distillation for long-context enabled models: where you control the model family, use short-to-long distillation to preserve deterministic short-context behavior while adding long-window capability [LongReD: Mitigating Short-Text Degradation of Long-Context Large Language Models via Restoration Distillation](https://arxiv.org/html/2502.07365v1).  \n- Chunking with deterministic retrieval order: split long documents into canonical chunks and retrieve/inject them in a fixed, deterministic order (by timestamp or canonical index) rather than by variable relevance scoring. Validate required facts via exact-match checks against the canonical chunks.\n\nStage 6 \u2014 Prompting, elicitation, few-shot selection and prompt engineering\nFactors that make a model \"dumb\":\n- High sensitivity to prompt phrasing and underspecified instructions leads to large behavioral variance from tiny phrasing differences [Revisiting Prompt Sensitivity in Large Language Models for Text Classification: The Role of Prompt Underspecification](https://arxiv.org/html/2602.04297v1).  \n- Over-prompting (too many or noisy few-shot examples) can degrade performance for smaller models (the \"few-shot dilemma\") [The Few-shot Dilemma: Over-prompting Large Language Models](https://arxiv.org/html/2509.13196v1).  \n- Ad-hoc prompt development (no testing, no versioning) yields irreproducible skills [Promptware Engineering: Software Engineering for LLM Prompt Development](https://wssun.github.io/papers/2025-FSE-20230SEWorkshop-Promptware-Engineering.pdf).  \n\nFactors that make a model \"smart\":\n- Well-specified, instruction-rich, templated prompts reduce variance and improve adherence to expected output formats [Revisiting Prompt Sensitivity in Large Language Models for Text Classification: The Role of Prompt Underspecification](https://arxiv.org/html/2602.04297v1).  \n- Careful selection of a small number of semantically relevant few-shot exemplars (embedding or TF-IDF retrieval) improves performance without overloading context [The Few-shot Dilemma: Over-prompting Large Language Models](https://arxiv.org/html/2509.13196v1).  \n\nDeterministic countermeasures agent-skill authors can apply:\n- Treat prompts as versioned software artifacts (promptware): store prompt templates, exact examples, and normalization rules in source control; run automated prompt unit tests against canonical inputs to assert exact outputs before deployment [Promptware Engineering: Software Engineering for LLM Prompt Development](https://wssun.github.io/papers/2025-FSE-20230SEWorkshop-Promptware-Engineering.pdf).  \n- Use strict prompt templates with explicit output constraints and canonical labels (e.g., \"Return exactly one of: YES, NO, MAYBE\"), and enforce via deterministic validators (regex/JSON schema) so outputs are identical across runs [Revisiting Prompt Sensitivity in Large Language Models for Text Classification: The Role of Prompt Underspecification](https://arxiv.org/html/2602.04297v1).  \n- Limit few-shot examples to an empirically-determined small number (e.g., 3\u20135) selected deterministically via embedding/TF-IDF nearest neighbors; fix the ordering of examples to avoid run-to-run variation [The Few-shot Dilemma: Over-prompting Large Language Models](https://arxiv.org/html/2509.13196v1).  \n- Adopt prompt ensembling deterministically: precompute N prompt variants, run them with fixed seeds, and deterministically aggregate outputs (majority vote or canonical tie-breaking rule) to obtain a single identical answer [Promptware Engineering: Software Engineering for LLM Prompt Development](https://wssun.github.io/papers/2025-FSE-20230SEWorkshop-Promptware-Engineering.pdf).  \n\nStage 7 \u2014 Measurement and benchmark contamination\nFactors that make a model appear artificially \"smart\" (but be \"dumb\" in generalization):\n- Benchmark data contamination (training data including test examples) inflates scores and hides true generalization gaps [Benchmark Data Contamination of Large Language Models: A Survey](https://arxiv.org/html/2406.04244v1).  \n- Label leakage and dataset duplicates cause overfitting to benchmark idiosyncrasies [Benchmark Data Contamination of Large Language Models: A Survey](https://arxiv.org/html/2406.04244v1).  \n- Overreliance on a narrow set of benchmarks can fail to detect brittleness to out-of-distribution cases [Benchmark Data Contamination of Large Language Models: A Survey](https://arxiv.org/html/2406.04244v1).  \n\nDeterministic countermeasures agent-skill authors can apply:\n- Evaluate skills only on uncontaminated or regenerated test sets; use regenerated test data or procedural generation to avoid overlap with pretraining data [Benchmark Data Contamination of Large Language Models: A Survey](https://arxiv.org/html/2406.04244v1).  \n- Use held-out deterministic scenario tests (fixed seed synthetic cases or canonical real-world cases) as part of CI that must pass exactly before deployment; record exact inputs and outputs to detect drift [Benchmark Data Contamination of Large Language Models: A Survey](https://arxiv.org/html/2406.04244v1).  \n- For behavioral validation, prefer ground-truth deterministic checks (exact-match facts, schema validation) over soft-scoring metrics that can be gamed by contamination. Maintain a contamination-detection pipeline (overlap-matching / fingerprinting) between evaluation sets and available training sources [Benchmark Data Contamination of Large Language Models: A Survey](https://arxiv.org/html/2406.04244v1).  \n- Use ensemble and cross-model checks deterministically: require multiple independent models (or frozen skill versions) to agree exactly on outputs for critical skills; otherwise mark the case for human review [Large Language Models Miss the Multi-Agent Mark](https://arxiv.org/html/2505.21298v1).  \n\nPractical deterministic implementation checklist for agent-skill authors (apply these to every skill to make the weakest models behave identically each run):\n1. Freeze and bundle the tokenizer and preprocessing code/version; run a tokenization CI test on canonical inputs [How Different Tokenization Algorithms Impact LLMs and Transformer Models](https://arxiv.org/abs/2511.03825).  \n2. Use rigid prompt templates stored in source control; include exact few-shot exemplars in fixed order and run prompt unit tests with expected exact outputs [Promptware Engineering: Software Engineering for LLM Prompt Development](https://wssun.github.io/papers/2025-FSE-20230SEWorkshop-Promptware-Engineering.pdf).  \n3. Prefer deterministic decoding (greedy or fixed-seed beam search) for identical outputs; if sampling is used for quality, sample with fixed seeds and perform deterministic aggregation (majority voting with fixed tie-breaker) [Enhancing Reasoning Accuracy in Large Language Models During Inference Time](https://arxiv.org/abs/2603.21301).  \n4. Always inject a small canonical knowledge block or query deterministic external store for any factual claims; require exact-match verification or return a canonical refusal token [Programming Every Example: Lifting Pre-training Data Quality Like Experts at Scale](https://icml.cc/virtual/2025/poster/44780).  \n5. Validate model outputs with deterministic validators (JSON schema, regex, exact-string checks); reject and retry deterministically or return a fixed fallback if validation fails [Reinforcement Learning from Human Feedback - RLHF Book](https://rlhfbook.com/book.pdf).  \n6. Use calibrated quantized/distilled models tested across identical inputs and include calibration datasets in CI to detect nondeterministic behavior introduced by compression [Evaluating Quantized Large Language Models](https://arxiv.org/abs/2402.18158).  \n7. Use restoration-distillation, planner/executor patterns, or external deterministic control flows to avoid large-model-only reasoning dependencies and enable small-model determinism where possible [LongReD: Mitigating Short-Text Degradation of Long-Context Large Language Models via Restoration Distillation](https://arxiv.org/html/2502.07365v1); [Enabling Small Language Models to Solve Complex Reasoning Tasks (MIT News on DisCIPL)](https://news.mit.edu/2025/enabling-small-language-models-solve-complex-reasoning-tasks-1212).  \n8. Continuously test skills on uncontaminated, deterministic evaluation sets and require exact pass/fail criteria in CI before release [Benchmark Data Contamination of Large Language Models: A Survey](https://arxiv.org/html/2406.04244v1).  \n\nAdopt these prescriptive, deterministic engineering patterns as the baseline for every skill: fixed preprocessing/tokenization, templated prompts, deterministic decoding/aggregation, canonical knowledge injection with exact verification, schema validation and fixed-fallbacks, and uncontaminated test suites. These practices convert probabilistic LLM behavior into controlled, repeatable skill executions even when the deployed model is small or otherwise weak."
+  },
+  "researchId": "r_01kszmd2tqa1vc7hvrx41kg6fn",
+  "status": "completed"
+}

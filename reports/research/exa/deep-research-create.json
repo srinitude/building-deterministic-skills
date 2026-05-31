@@ -1,0 +1,7 @@
+{
+  "createdAt": 1780251790167,
+  "instructions": "Enumerate comprehensively the factors that make a large language model dumb versus smart, organized by stage: (1) pretraining scale and data, (2) architecture, tokenization, quantization, distillation, (3) post-training RLHF, sycophancy, hallucination, (4) inference-time compute and reasoning, (5) context handling including lost-in-the-middle and context rot, (6) prompting and elicitation, (7) measurement and benchmark contamination. For each factor, give the concrete countermeasure an agent-skill author should apply so the weakest models execute the skill deterministically and identically every time. Cite sources.",
+  "model": "exa-research",
+  "researchId": "r_01kszmd2tqa1vc7hvrx41kg6fn",
+  "status": "running"
+}

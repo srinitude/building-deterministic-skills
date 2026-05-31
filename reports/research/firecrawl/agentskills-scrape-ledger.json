@@ -1,0 +1,50 @@
+{
+ "map": "agentskills-map.json",
+ "scrapes": [
+  {
+   "url": "https://agentskills.io/client-implementation/adding-skills-support.md",
+   "status": "scraped",
+   "output": "reports/research/firecrawl/agentskills-scrapes/client-implementation-adding-skills-support.json"
+  },
+  {
+   "url": "https://agentskills.io/clients.md",
+   "status": "scraped",
+   "output": "reports/research/firecrawl/agentskills-scrapes/clients.json"
+  },
+  {
+   "url": "https://agentskills.io/home.md",
+   "status": "scraped",
+   "output": "reports/research/firecrawl/agentskills-scrapes/home.json"
+  },
+  {
+   "url": "https://agentskills.io/skill-creation/best-practices.md",
+   "status": "scraped",
+   "output": "reports/research/firecrawl/agentskills-scrapes/skill-creation-best-practices.json"
+  },
+  {
+   "url": "https://agentskills.io/skill-creation/evaluating-skills.md",
+   "status": "scraped",
+   "output": "reports/research/firecrawl/agentskills-scrapes/skill-creation-evaluating-skills.json"
+  },
+  {
+   "url": "https://agentskills.io/skill-creation/optimizing-descriptions.md",
+   "status": "scraped",
+   "output": "reports/research/firecrawl/agentskills-scrapes/skill-creation-optimizing-descriptions.json"
+  },
+  {
+   "url": "https://agentskills.io/skill-creation/using-scripts.md",
+   "status": "scraped",
+   "output": "reports/research/firecrawl/agentskills-scrapes/skill-creation-using-scripts.json"
+  },
+  {
+   "url": "https://agentskills.io/specification.md",
+   "status": "scraped",
+   "output": "reports/research/firecrawl/agentskills-scrapes/specification.json"
+  },
+  {
+   "url": "https://agentskills.io/llms.txt",
+   "status": "scraped",
+   "output": "reports/research/firecrawl/agentskills-scrapes/llms-txt.json"
+  }
+ ]
+}

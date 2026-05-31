@@ -17,6 +17,12 @@ from pathlib import Path
 
 MAX_DESCRIPTION_LENGTH = 1024
 MAX_SKILL_CONTENT_CHARS = 100_000
+MAX_NAME_LENGTH = 64
+MAX_COMPATIBILITY_LENGTH = 500
+# agentskills.io spec: closed set of allowed top-level frontmatter fields.
+ALLOWED_TOP_LEVEL_FIELDS = {
+    "name", "description", "license", "allowed-tools", "metadata", "compatibility",
+}
 
 
 def skill_root() -> Path:
@@ -94,10 +100,28 @@ def main() -> int:
         mode = "standalone"
 
     parsed = parse_frontmatter(content)
-    assert parsed.get("name") == root.name, "frontmatter name must match parent directory"
+    name = parsed.get("name")
+    assert name == root.name, "frontmatter name must match parent directory"
     assert "description" in parsed, "frontmatter must include description"
     assert len(str(parsed["description"])) <= max_description, "description exceeds limit"
-    print(json.dumps({"PASS_FRONTMATTER": True, "mode": mode, "name": parsed.get("name")}, sort_keys=True))
+
+    # agentskills.io canonical name rules.
+    assert isinstance(name, str) and 1 <= len(name) <= MAX_NAME_LENGTH, "name length out of [1,64]"
+    assert name == name.lower(), "name must be lowercase"
+    assert not (name.startswith("-") or name.endswith("-")), "name cannot start/end with a hyphen"
+    assert "--" not in name, "name cannot contain consecutive hyphens"
+    assert all(c.isalnum() or c == "-" for c in name), "name allows only letters, digits, hyphens"
+
+    # agentskills.io closed set of allowed top-level frontmatter fields.
+    extra = set(parsed.keys()) - ALLOWED_TOP_LEVEL_FIELDS
+    assert not extra, (
+        f"disallowed top-level frontmatter field(s): {sorted(extra)}. "
+        f"Allowed: {sorted(ALLOWED_TOP_LEVEL_FIELDS)}. Nest everything else under 'metadata'."
+    )
+    if "compatibility" in parsed:
+        assert len(str(parsed["compatibility"])) <= MAX_COMPATIBILITY_LENGTH, "compatibility exceeds 500 chars"
+
+    print(json.dumps({"PASS_FRONTMATTER": True, "mode": mode, "name": name}, sort_keys=True))
     return 0
 
 

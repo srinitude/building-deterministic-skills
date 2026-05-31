@@ -28,6 +28,17 @@
         "Output contract requires an INSUFFICIENT-CONTEXT escape hatch",
         "Output contract offloads math/counting to scripts"
       ]
+    },
+    {
+      "id": "functional-agentskills-frontmatter-compliance",
+      "prompt": "Make this skill agentskills.io-compliant and validate its frontmatter.",
+      "should_trigger": true,
+      "assertions": [
+        "Only allowed top-level frontmatter fields are kept (name, description, license, allowed-tools, metadata, compatibility)",
+        "version and author are nested under metadata, not at the top level",
+        "name is lowercase, has no leading/trailing/consecutive hyphens, and matches the parent directory",
+        "scripts/check-skill-frontmatter.py passes"
+      ]
     }
   ]
 }

@@ -1,0 +1,23 @@
+Found 1596272 results (showing 3)
+
+1. Scaling Behavior of Machine Translation with Large Language Models under Prompt Injection Attacks
+   ID: 2403.09832v1 | Published: 2024-03-14 | Updated: 2024-03-14
+   Authors: Zhifan Sun, Antonio Valerio Miceli-Barone
+   Categories: cs.CL
+   Abstract: Large Language Models (LLMs) are increasingly becoming the preferred foundation platforms for many Natural Language Processing tasks such as Machine Translation, owing to their quality often comparable to or better than task-specific models, and the simplicity of specifying the task through natural ...
+   Links: https://arxiv.org/abs/2403.09832 | https://arxiv.org/pdf/2403.09832
+
+2. Evaluating the Robustness of Chinchilla Compute-Optimal Scaling
+   ID: 2509.23963v1 | Published: 2025-09-28 | Updated: 2025-09-28
+   Authors: Rylan Schaeffer, Noam Levi, Andreas Kirsch, Theo Guenais, Brando Miranda, Elyas Obbad, Sanmi Koyejo
+   Categories: cs.LG
+   Abstract: Hoffman et al (2022)'s Chinchilla paper introduced the principle of compute-optimal scaling, laying a foundation for future scaling of language models. In the years since, however, valid concerns about Chinchilla have been raised: wide confidence intervals, discrepancies between its three approaches...
+   Links: https://arxiv.org/abs/2509.23963 | https://arxiv.org/pdf/2509.23963
+
+3. Beyond Chinchilla-Optimal: Accounting for Inference in Language Model Scaling Laws
+   ID: 2401.00448v3 | Published: 2023-12-31 | Updated: 2025-04-14
+   Authors: Nikhil Sardana, Jacob Portes, Sasha Doubov, Jonathan Frankle
+   Categories: cs.LG, cs.CL
+   Abstract: Large language model (LLM) scaling laws are empirical formulas that estimate changes in model quality as a result of increasing parameter count and training data. However, these formulas, including the popular Deepmind Chinchilla scaling laws, neglect to include the cost of inference. We modify the ...
+   Links: https://arxiv.org/abs/2401.00448 | https://arxiv.org/pdf/2401.00448
+

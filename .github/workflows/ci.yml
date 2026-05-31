@@ -47,8 +47,8 @@ jobs:
       - name: Determinism (every script --self-test, twice, byte-identical)
         run: python3 scripts/check-determinism.py
 
-      - name: Coverage self-test (factor/guide files are local-only)
-        run: python3 scripts/check-dumb-model-coverage.py --self-test
+      - name: Coverage (factor + guide docs bundled in references/)
+        run: python3 scripts/check-dumb-model-coverage.py
 
       - name: Evals JSON is valid
         run: python3 -c "import json; json.load(open('evals/evals.json'))"
