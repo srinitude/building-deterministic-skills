@@ -1,0 +1,17 @@
+{
+  "markdown": "https://agentskills.io/client-implementation/adding-skills-support2026-03-10T13:40:59.504Zhttps://agentskills.io/clients2026-05-20T16:51:00.382Zhttps://agentskills.io/home2026-05-20T16:51:00.377Zhttps://agentskills.io/skill-creation/best-practices2026-04-22T15:20:01.732Zhttps://agentskills.io/skill-creation/evaluating-skills2026-03-16T14:47:57.395Zhttps://agentskills.io/skill-creation/optimizing-descriptions2026-04-22T15:20:01.730Zhttps://agentskills.io/skill-creation/quickstart2026-04-22T15:20:01.734Zhttps://agentskills.io/skill-creation/using-scripts2026-02-27T21:52:53.772Zhttps://agentskills.io/specification2026-05-20T17:23:21.008Z",
+  "metadata": {
+    "scrapeId": "019e7286-0e60-75b8-b60e-8a43b9b8dcdc",
+    "sourceURL": "https://agentskills.io/sitemap.xml",
+    "url": "https://agentskills.io/sitemap.xml",
+    "statusCode": 200,
+    "contentType": "text/xml",
+    "proxyUsed": "basic",
+    "cacheState": "hit",
+    "cachedAt": "2026-05-29T06:35:57.187Z",
+    "creditsUsed": 1,
+    "concurrencyLimited": false
+  },
+  "links": [],
+  "summary": "The page outlines the process and best practices for adding skill support for clients within the AgentSkills platform. It emphasizes the importance of understanding client needs and the functionality of skills, offering guidelines on creating, evaluating, and optimizing skills. Additionally, the page provides resources for quick start implementations and effective use of scripts. Key points include best practices for skill creation, methods to evaluate skill effectiveness, and ensuring the descriptions are optimized for user clarity and engagement."
+}

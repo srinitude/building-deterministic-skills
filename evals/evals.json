@@ -1,0 +1,33 @@
+{
+  "skill_name": "building-deterministic-skills",
+  "evals": [
+    {
+      "id": "trigger-weak-model-skill",
+      "prompt": "Build a deterministic skill that a tiny quantized model can follow without guessing.",
+      "should_trigger": true,
+      "assertions": [
+        "Generated skill contains CRITICAL RULES near the top",
+        "Generated skill contains Gotchas",
+        "Generated skill includes exact verification commands"
+      ]
+    },
+    {
+      "id": "anti-trigger-general-edit",
+      "prompt": "Rewrite this paragraph to sound friendlier.",
+      "should_trigger": false,
+      "assertions": [
+        "No deterministic skill package is needed"
+      ]
+    },
+    {
+      "id": "functional-output-contract",
+      "prompt": "Create an Agent Skill from this workflow and make it robust for dumb models.",
+      "should_trigger": true,
+      "assertions": [
+        "Output contract includes front-loaded-AND-book-ended critical rules",
+        "Output contract includes INSUFFICIENT CONTEXT",
+        "Output contract offloads math/counting to scripts"
+      ]
+    }
+  ]
+}

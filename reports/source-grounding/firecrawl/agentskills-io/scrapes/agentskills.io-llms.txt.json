@@ -1,0 +1,17 @@
+{
+  "markdown": "\\# Agent Skills\n\n\\## Docs\n\n\\- \\[How to add skills support to your agent\\](https://agentskills.io/client-implementation/adding-skills-support.md): A guide for adding Agent Skills support to an AI agent or development tool.\n\\- \\[Client Showcase\\](https://agentskills.io/clients.md): Agent products that support the Agent Skills format.\n\\- \\[Agent Skills Overview\\](https://agentskills.io/home.md): A standardized way to give AI agents new capabilities and expertise.\n\\- \\[Best practices for skill creators\\](https://agentskills.io/skill-creation/best-practices.md): How to write skills that are well-scoped and calibrated to the task.\n\\- \\[Evaluating skill output quality\\](https://agentskills.io/skill-creation/evaluating-skills.md): How to test whether your skill produces good outputs using eval-driven iteration.\n\\- \\[Optimizing skill descriptions\\](https://agentskills.io/skill-creation/optimizing-descriptions.md): How to improve your skill's description so it triggers reliably on relevant prompts.\n\\- \\[Quickstart\\](https://agentskills.io/skill-creation/quickstart.md): Create your first Agent Skill and see it work in VS Code.\n\\- \\[Using scripts in skills\\](https://agentskills.io/skill-creation/using-scripts.md): How to run commands and bundle executable scripts in your skills.\n\\- \\[Specification\\](https://agentskills.io/specification.md): The complete format specification for Agent Skills.",
+  "metadata": {
+    "scrapeId": "019e7286-3b34-72f4-ad8c-7f5d8c1181be",
+    "sourceURL": "https://agentskills.io/llms.txt",
+    "url": "https://agentskills.io/llms.txt",
+    "statusCode": 200,
+    "contentType": "text/plain; charset=utf-8",
+    "proxyUsed": "basic",
+    "cacheState": "hit",
+    "cachedAt": "2026-05-29T01:39:14.360Z",
+    "creditsUsed": 1,
+    "concurrencyLimited": false
+  },
+  "links": [],
+  "summary": "The content provides an overview of resources and guidelines related to Agent Skills for AI agents. It includes links to documentation that covers how to add skills support, showcases client products, and outlines best practices for creating and optimizing skills. Key topics include evaluating the quality of skill outputs, descriptions, and a quickstart guide for creating skills in VS Code. Additionally, there is a complete specification available for the Agent Skills format."
+}

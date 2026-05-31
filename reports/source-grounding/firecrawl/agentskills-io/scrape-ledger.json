@@ -1,0 +1,133 @@
+{
+  "extra_commands": [
+    {
+      "command": "crawl",
+      "note": "crawl command timed out after 600s",
+      "output": "reports/source-grounding/firecrawl/agentskills-io/crawl.json",
+      "size_bytes": 0,
+      "status": "failed"
+    },
+    {
+      "command": "search",
+      "note": "",
+      "output": "reports/source-grounding/firecrawl/agentskills-io/search.json",
+      "size_bytes": 6238,
+      "status": "ok"
+    }
+  ],
+  "failed_count": 0,
+  "generated_at": "2026-05-29T07:12:30Z",
+  "map": "reports/source-grounding/firecrawl/agentskills-io/map.json",
+  "mapped_count": 18,
+  "scraped_count": 18,
+  "scrapes": [
+    {
+      "output": "reports/source-grounding/firecrawl/agentskills-io/scrapes/agentskills.io-skill-creation-best-practices.json",
+      "size_bytes": 24495,
+      "status": "scraped",
+      "url": "https://agentskills.io/skill-creation/best-practices"
+    },
+    {
+      "output": "reports/source-grounding/firecrawl/agentskills-io/scrapes/agentskills.io-skill-creation-optimizing-descriptions.json",
+      "size_bytes": 21632,
+      "status": "scraped",
+      "url": "https://agentskills.io/skill-creation/optimizing-descriptions"
+    },
+    {
+      "output": "reports/source-grounding/firecrawl/agentskills-io/scrapes/agentskills.io-specification.json",
+      "size_bytes": 13600,
+      "status": "scraped",
+      "url": "https://agentskills.io/specification"
+    },
+    {
+      "output": "reports/source-grounding/firecrawl/agentskills-io/scrapes/agentskills.io-clients.json",
+      "size_bytes": 29967,
+      "status": "scraped",
+      "url": "https://agentskills.io/clients"
+    },
+    {
+      "output": "reports/source-grounding/firecrawl/agentskills-io/scrapes/agentskills.io-home.json",
+      "size_bytes": 25809,
+      "status": "scraped",
+      "url": "https://agentskills.io/home"
+    },
+    {
+      "output": "reports/source-grounding/firecrawl/agentskills-io/scrapes/agentskills.io-skill-creation-optimizing-descriptions.md.json",
+      "size_bytes": 15892,
+      "status": "scraped",
+      "url": "https://agentskills.io/skill-creation/optimizing-descriptions.md"
+    },
+    {
+      "output": "reports/source-grounding/firecrawl/agentskills-io/scrapes/agentskills.io-sitemap.xml.json",
+      "size_bytes": 1632,
+      "status": "scraped",
+      "url": "https://agentskills.io/sitemap.xml"
+    },
+    {
+      "output": "reports/source-grounding/firecrawl/agentskills-io/scrapes/agentskills.io-specification.md.json",
+      "size_bytes": 9764,
+      "status": "scraped",
+      "url": "https://agentskills.io/specification.md"
+    },
+    {
+      "output": "reports/source-grounding/firecrawl/agentskills-io/scrapes/agentskills.io-llms.txt.json",
+      "size_bytes": 2370,
+      "status": "scraped",
+      "url": "https://agentskills.io/llms.txt"
+    },
+    {
+      "output": "reports/source-grounding/firecrawl/agentskills-io/scrapes/agentskills.io-mcp.json",
+      "size_bytes": 6134,
+      "status": "scraped",
+      "url": "https://agentskills.io/mcp"
+    },
+    {
+      "output": "reports/source-grounding/firecrawl/agentskills-io/scrapes/agentskills.io-skill-creation-quickstart.json",
+      "size_bytes": 9598,
+      "status": "scraped",
+      "url": "https://agentskills.io/skill-creation/quickstart"
+    },
+    {
+      "output": "reports/source-grounding/firecrawl/agentskills-io/scrapes/agentskills.io-home.md.json",
+      "size_bytes": 25798,
+      "status": "scraped",
+      "url": "https://agentskills.io/home.md"
+    },
+    {
+      "output": "reports/source-grounding/firecrawl/agentskills-io/scrapes/agentskills.io-skill-creation-using-scripts.json",
+      "size_bytes": 19231,
+      "status": "scraped",
+      "url": "https://agentskills.io/skill-creation/using-scripts"
+    },
+    {
+      "output": "reports/source-grounding/firecrawl/agentskills-io/scrapes/agentskills.io-skill-creation-best-practices.md.json",
+      "size_bytes": 17536,
+      "status": "scraped",
+      "url": "https://agentskills.io/skill-creation/best-practices.md"
+    },
+    {
+      "output": "reports/source-grounding/firecrawl/agentskills-io/scrapes/agentskills.io-skill-creation-quickstart.md.json",
+      "size_bytes": 5405,
+      "status": "scraped",
+      "url": "https://agentskills.io/skill-creation/quickstart.md"
+    },
+    {
+      "output": "reports/source-grounding/firecrawl/agentskills-io/scrapes/agentskills.io-client-implementation-adding-skills-support.json",
+      "size_bytes": 33291,
+      "status": "scraped",
+      "url": "https://agentskills.io/client-implementation/adding-skills-support"
+    },
+    {
+      "output": "reports/source-grounding/firecrawl/agentskills-io/scrapes/agentskills.io-skill-creation-evaluating-skills.json",
+      "size_bytes": 25320,
+      "status": "scraped",
+      "url": "https://agentskills.io/skill-creation/evaluating-skills"
+    },
+    {
+      "output": "reports/source-grounding/firecrawl/agentskills-io/scrapes/agentskills.io.json",
+      "size_bytes": 25825,
+      "status": "scraped",
+      "url": "https://agentskills.io"
+    }
+  ]
+}
