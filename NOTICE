@@ -1,11 +1,11 @@
 building-deterministic-skills
 Copyright 2026 Kiren Srinivasan and contributors
 
-This product includes a platform-agnostic Agent Skill and validators for the
-open Agent Skills format. "agentskills.io" is referenced for interoperability
-and is the property of its respective owner. Source-grounding artifacts under
-reports/ are derived from public agentskills.io documentation and public
-research sources for validation purposes.
+This product includes an Agent Skill and validators built against the open
+Agent Skills format published at agentskills.io. "agentskills.io" is referenced
+for interoperability and is the property of its respective owner.
+Source-grounding artifacts under reports/ are derived from public agentskills.io
+documentation for validation purposes.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

@@ -12,7 +12,7 @@ and so the prescriber's own large meta-skill SKILL.md also passes.
 Every check is a structural assertion -- never model judgement.
 
 Universal checks (every dumb-model skill must satisfy):
-  - size limits (<= 100000 chars, body <= 500 lines);
+  - body <= 500 lines (the agentskills.io spec's body-length guidance);
   - `## CRITICAL RULES` and `## Gotchas` front-loaded in the first 80 body lines;
   - a workflow section (`## Workflow` or `## Ordered workflow`) with no branching menu;
   - at least MIN_NUMBERED_STEPS numbered steps, counting BOTH `N.` and `- [ ] N.` forms;
@@ -79,7 +79,6 @@ def main() -> int:
     body = body_without_frontmatter(text)
     lines = body.splitlines()
 
-    assert len(text) <= 100000, "SKILL.md exceeds 100000 chars"
     assert len(lines) <= 500, "SKILL.md body exceeds 500 lines"
 
     first_80 = "\n".join(lines[:80])

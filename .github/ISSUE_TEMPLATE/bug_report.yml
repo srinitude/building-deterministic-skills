@@ -33,7 +33,7 @@ body:
     id: env
     attributes:
       label: Environment
-      description: OS, Python version, agent runtime (if relevant).
+      description: OS and Python version, plus your agent runtime/version (if relevant).
       placeholder: macOS 26.4, Python 3.11
     validations:
       required: false

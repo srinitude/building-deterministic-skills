@@ -1,14 +1,14 @@
 # Contributing to building-deterministic-skills
 
 Thanks for helping improve this meta-skill. This project IS the methodology it
-teaches: every change must keep both targets intact — the skill must pass the
-agentskills.io validator (`skills-ref`), and the skills it tells you to generate
-must stay easy for weak models to execute.
+teaches: every change must keep both targets intact — the skill must stay valid
+against the agentskills.io spec, and the skills it tells you to generate must
+stay easy for weak models to execute.
 
 ## Ground rules
 
-1. **Preserve both targets.** Keep the skill agentskills.io-valid AND keep the
-   generated-skill output contract weak-model-friendly.
+1. **Preserve both targets.** Keep the skill valid against the agentskills.io
+   spec AND keep the generated-skill output contract weak-model-friendly.
 2. **Front-load and book-end critical rules.** `## CRITICAL RULES` stays near
    the top of `SKILL.md`; the final self-check repeats the load-bearing ones.
 3. **Defaults, not menus.** The workflow has one default path. Exceptions go in
@@ -16,11 +16,10 @@ must stay easy for weak models to execute.
 4. **Offload exact checks to scripts.** Counting, hashing, frontmatter,
    coverage, and grounding checks live in `scripts/`, each with `--self-test`.
 5. **Keep source grounding honest.** Claims about agentskills.io must be backed
-   by `reports/source-grounding/` or `reports/research/` artifacts or live
-   source. Do not delete the grounding artifacts; `check-source-grounding.py`
-   depends on them.
+   by `reports/source-grounding/` artifacts or the cited public source. Do not
+   delete the grounding artifacts; `check-source-grounding.py` depends on them.
 6. **No secrets, no network in scripts.** Validators are stdlib-only and
-   offline so they run in clean CI and pass any security scan.
+   offline so they run in clean CI and pass a security scan.
 
 ## Local validation
 
@@ -32,16 +31,21 @@ python3 scripts/check-preserved-invariants.py
 python3 scripts/check-source-grounding.py
 python3 scripts/check-report-grounding.py
 python3 scripts/check-determinism.py
-python3 scripts/check-dumb-model-coverage.py
+python3 scripts/check-dumb-model-coverage.py --self-test
 ```
 
-For full agentskills.io compliance, also run the canonical reference validator
-(`skills-ref validate .` from `github.com/agentskills/agentskills`).
+For agentskills.io compliance, also run the canonical reference validator from
+`github.com/agentskills/agentskills`:
+
+```bash
+skills-ref validate ./
+```
 
 ## Pull request checklist
 
 - [ ] CI (`.github/workflows/ci.yml`) is green.
-- [ ] `SKILL.md` body stays at or below 500 lines and 100000 chars.
+- [ ] `SKILL.md` stays compact (move detail into `references/` rather than
+      growing the body; many runtimes cap total SKILL.md size).
 - [ ] New referenced files live under `references/`, `scripts/`, `assets/`,
       `evals/`, or `reports/` and are linked with an explicit load condition.
 - [ ] New scripts support `--self-test` and are deterministic.

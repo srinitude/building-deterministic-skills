@@ -10,7 +10,11 @@ before shipping:
   - `description`: present, non-empty, <= 1024 chars;
   - only the allowed top-level fields appear (closed set);
   - `compatibility` (if present) <= 500 chars;
-  - non-empty body after frontmatter; total content <= 100000 chars.
+  - non-empty body after frontmatter.
+
+These are the constraints the agentskills.io specification defines for
+frontmatter. The spec sets no hard character cap on total SKILL.md size; body
+length guidance (keep under 500 lines) is enforced by check-dumb-model-readability.py.
 """
 from __future__ import annotations
 
@@ -21,7 +25,6 @@ import unicodedata
 from pathlib import Path
 
 MAX_DESCRIPTION_LENGTH = 1024
-MAX_SKILL_CONTENT_CHARS = 100_000
 MAX_NAME_LENGTH = 64
 MAX_COMPATIBILITY_LENGTH = 500
 # agentskills.io spec: closed set of allowed top-level frontmatter fields.
@@ -38,7 +41,6 @@ def split_frontmatter(content: str) -> str:
     assert content.startswith("---"), "SKILL.md must start with YAML frontmatter (---)"
     end = re.search(r"\n---\s*\n", content[3:])
     assert end is not None, "frontmatter is not closed with a '---' line"
-    assert len(content) <= MAX_SKILL_CONTENT_CHARS, "SKILL.md exceeds content limit"
     body = content[end.end() + 3:].strip()
     assert body, "SKILL.md must have a body after the frontmatter"
     return content[3:end.start() + 3]
