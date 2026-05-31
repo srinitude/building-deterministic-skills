@@ -24,8 +24,8 @@
       "prompt": "Create an Agent Skill from this workflow and make it robust for dumb models.",
       "should_trigger": true,
       "assertions": [
-        "Output contract includes front-loaded-AND-book-ended critical rules",
-        "Output contract includes INSUFFICIENT CONTEXT",
+        "Output contract requires front-loaded-AND-book-ended critical rules",
+        "Output contract requires an INSUFFICIENT-CONTEXT escape hatch",
         "Output contract offloads math/counting to scripts"
       ]
     }
